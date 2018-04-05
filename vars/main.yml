@@ -1,5 +1,9 @@
 ---
 # vars file for roundcubemail
 roundcubemail_packages:
+  Debian:
+    - roundcube
   default:
     - roundcubemail
+  Ubuntu:
+    - roundcube
