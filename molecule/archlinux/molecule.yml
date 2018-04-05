@@ -8,7 +8,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: php-archlinux
+  - name: roundcubemail-archlinux
     image: base/archlinux
 provisioner:
   name: ansible

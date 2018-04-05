@@ -8,7 +8,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: php-ubuntu-artful
+  - name: roundcubemail-ubuntu-artful
     image: ubuntu:artful
 provisioner:
   name: ansible

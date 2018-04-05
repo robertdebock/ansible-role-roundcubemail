@@ -8,7 +8,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: php-ubuntu-xenial
+  - name: roundcubemail-ubuntu-xenial
     image: ubuntu:xenial
 provisioner:
   name: ansible
