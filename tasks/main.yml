@@ -7,3 +7,23 @@
     - "{{ roundcubemail_packages[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
       | default(roundcubemail_packages[ansible_distribution]
       | default(roundcubemail_packages['default'] )) }}"
+
+- name: configure php
+  include_role:
+    name: robertdebock.php
+  vars:
+    php_settings:
+      upload_max_filesize:
+        section: PHP
+        value: 5M
+      post_max_size:
+        section: PHP
+        value: 6M
+
+- name: configure software
+  template:
+    src: config.inc.php.j2
+    dest: /etc/roundcubemail/config.inc.php
+    owner: root
+    group: apache
+    mode: 0640
