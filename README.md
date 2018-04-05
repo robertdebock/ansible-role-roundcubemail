@@ -69,6 +69,7 @@ roles:
   - role: robertdebock.php
   - role: robertdebock.mysql
   - role: robertdebock.buildtools
+  - role: robertdebock.python-pip
   - role: robertdebock.httpd
 
   tasks:

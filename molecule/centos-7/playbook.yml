@@ -8,6 +8,7 @@
     - role: robertdebock.bootstrap
     - role: robertdebock.epel
     - role: robertdebock.scl
+    - role: robetdebock.buildtools
     - role: robertdebock.python-pip
     - role: robertdebock.httpd
     - role: ansible-role-roundcubemail
