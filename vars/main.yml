@@ -1,0 +1,5 @@
+---
+# vars file for roundcubemail
+roundcubemail_packages:
+  default:
+    - roundcubemail

@@ -65,8 +65,23 @@ Example Playbook
 - hosts: servers
 
   roles:
-    - role: robertdebock.bootstrap
-    - role: robertdebock.roundcubemail
+    - robertdebock.bootstrap
+    - robertdebock.mysql
+
+  tasks:
+  - name: create database
+    mysql_db:
+      name: bobdata
+
+  - name: create user
+    mysql_user:
+      name: bob
+      password: 12345
+      priv: '*.*:ALL'
+
+  - name: include roundcubemail role
+    include_role:    
+      name: robertdebock.roundcubemail
 ```
 
 Install this role using `galaxy install robertdebock.roundcubemail`.

@@ -1,0 +1,9 @@
+---
+# tasks file for roundcubemail
+- name: install software
+  package:
+    name: "{{ item }}"
+  with_items:
+    - "{{ roundcubemail_packages[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
+      | default(roundcubemail_packages[ansible_distribution]
+      | default(roundcubemail_packages['default'] )) }}"
