@@ -1,8 +1,12 @@
 ---
 - name: Converge
   hosts: all
-  gather_facts: false
+  become: yes
+  gather_facts: no
 
   roles:
     - role: robertdebock.bootstrap
+    - role: robertdebock.php
+    - role: robertdebock.buildtools
+    - role: robertdebock.httpd
     - role: ansible-role-roundcubemail

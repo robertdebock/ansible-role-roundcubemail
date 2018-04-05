@@ -6,4 +6,7 @@
 
   roles:
     - role: robertdebock.bootstrap
+    - role: robertdebock.php
+    - role: robertdebock.buildtools
+    - role: robertdebock.httpd
     - role: ansible-role-roundcubemail

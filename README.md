@@ -64,9 +64,12 @@ Example Playbook
 ```
 - hosts: servers
 
-  roles:
-    - robertdebock.bootstrap
-    - robertdebock.mysql
+roles:
+  - role: robertdebock.bootstrap
+  - role: robertdebock.php
+  - role: robertdebock.mysql
+  - role: robertdebock.buildtools
+  - role: robertdebock.httpd
 
   tasks:
   - name: create database
