@@ -1,2 +1,4 @@
 ---
 # defaults file for roundcubemail
+
+roundcubemail_database_url: mysql://roundcube:pass@localhost/roundcubemail
