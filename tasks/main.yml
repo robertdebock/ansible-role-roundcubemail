@@ -23,7 +23,7 @@
 - name: configure software
   template:
     src: config.inc.php.j2
-    dest: /etc/roundcubemail/config.inc.php
-    owner: root
-    group: apache
-    mode: 0640
+    dest: "{{ roundcubemail_configuration[ansible_distribution]['file'] }}"
+    owner: "{{ roundcubemail_configuration[ansible_distribution]['owner'] }}"
+    group: "{{ roundcubemail_configuration[ansible_distribution]['group'] }}"
+    mode: "{{ roundcubemail_configuration[ansible_distribution]['mode'] }}"

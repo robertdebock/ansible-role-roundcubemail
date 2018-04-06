@@ -1,9 +1,54 @@
 ---
 # vars file for roundcubemail
 roundcubemail_packages:
+  Archlinux:
+    - roundcubemail
+  Alpine:
+    - roundcube
+  CentOS:
+    - roundcubemail
   Debian:
     - roundcube
-  default:
+  Fedora:
+    - roundcubemail
+  openSUSE Leap:
     - roundcubemail
   Ubuntu:
     - roundcube
+
+roundcubemail_configuration:
+  Archlinux:
+    file: /etc/webapps/roundcubemail/config/config.inc.php
+    owner: root
+    group: root
+    mode: 0644
+  Alpine:
+    file: /etc/roundcube/config.inc.php
+    owner: root
+    group: root
+    mode: 0644
+  CentOS:
+    file: /etc/roundcubemail/config.inc.php
+    owner: root
+    group: apache
+    mode: 0640
+  Debian:
+    file: /etc/roundcube/config.inc.php
+    owner: root
+    group: www-data
+    mode: 0640
+  Fedora:
+    file: /etc/roundcubemail/config.inc.php
+    owner: root
+    group: apache
+    mode: 0640
+  openSUSE Leap:
+    file: /etc/roundcubemail/config.inc.php
+    owner: root
+    group: root
+    mode: 0644
+  Ubuntu:
+    file: /etc/roundcube/config.inc.php
+    owner: root
+    group: www-data
+    mode: 0640

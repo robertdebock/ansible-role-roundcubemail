@@ -20,7 +20,7 @@ Access to a repository containing packages, likely on the internet.
 Role Variables
 --------------
 
-None known
+- roundcubemail_database_url - The URL to the database.
 
 Dependencies
 ------------
