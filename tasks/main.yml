@@ -4,9 +4,7 @@
   package:
     name: "{{ item }}"
   with_items:
-    - "{{ roundcubemail_packages[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
-      | default(roundcubemail_packages[ansible_distribution]
-      | default(roundcubemail_packages['default'] )) }}"
+    - "{{ roundcubemail_configuration[ansible_distribution]['package'] }}"
 
 - name: configure php
   include_role:
