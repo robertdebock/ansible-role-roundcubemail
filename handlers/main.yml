@@ -1,2 +1,10 @@
 ---
 # handlers file for roundcubemail
+- name: restart httpd
+  service:
+    name: "{{ item }}"
+    state: restarted
+  with_items:
+    - "{{ httpd_configuration[ansible_distribution]['httpd_service'] }}"
+  when:
+    - ansible_virtualization_type != "docker"

@@ -1,45 +1,59 @@
 ---
 # vars file for roundcubemail
 roundcubemail_configuration:
-  Archlinux:
-    package: roundcubemail
-    file: /etc/webapps/roundcubemail/config/config.inc.php
-    owner: root
-    group: root
-    mode: 0644
   Alpine:
     package: roundcubemail
     file: /etc/roundcube/config.inc.php
     owner: root
     group: root
     mode: 0644
+    httpd_conf: /etc/apache2/conf.d/roundcubemail.conf
+    httpd_service: apache2
+  Archlinux:
+    package: roundcubemail
+    file: /etc/webapps/roundcubemail/config/config.inc.php
+    owner: root
+    group: root
+    mode: 0644
+    httpd_conf: /etc/httpd/conf/extra/roundcubemail.conf
+    httpd_service: httpd
   CentOS:
     package: roundcubemail
     file: /etc/roundcubemail/config.inc.php
     owner: root
     group: apache
     mode: 0640
+    httpd_conf: /etc/httpd/conf.d/roundcubemail.conf
+    httpd_service: httpd
   Debian:
     package: roundcube
     file: /etc/roundcube/config.inc.php
     owner: root
     group: www-data
     mode: 0640
+    httpd_conf: /etc/apache2/conf-enabled/roundcubemail.conf
+    httpd_service: apache2
   Fedora:
     package: roundcubemail
     file: /etc/roundcubemail/config.inc.php
     owner: root
     group: apache
     mode: 0640
+    httpd_conf: /etc/httpd/conf.d/roundcubemail.conf
+    httpd_service: httpd
   openSUSE Leap:
     package: roundcubemail
     file: /etc/roundcubemail/config.inc.php
     owner: root
     group: root
     mode: 0644
+    httpd_conf: /etc/apache2/conf.d/roundcubemail.conf
+    httpd_service: apache2
   Ubuntu:
     package: roundcube
     file: /etc/roundcube/config.inc.php
     owner: root
     group: www-data
     mode: 0640
+    httpd_conf: /etc/apache2/conf-enabled/roundcubemail.conf
+    httpd_service: apache2
