@@ -11,6 +11,8 @@
     name: "{{ item }}"
   with_items:
     - "{{ roundcubemail_configuration[ansible_distribution]['requirements'] }}"
+  notify:
+    - restart httpd
 
 - name: configure php
   include_role:
