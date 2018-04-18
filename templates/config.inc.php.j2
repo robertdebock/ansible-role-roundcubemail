@@ -31,12 +31,12 @@ $config['default_host'] = '{{ ansible_fqdn }}';
 
 // provide an URL where a user can get support for this Roundcube installation
 // PLEASE DO NOT LINK TO THE ROUNDCUBE.NET WEBSITE HERE!
-$config['support_url'] = '{{ ansible_fqdn }}/support';
+$config['support_url'] = '{{ roundcubemail_support_url }}';
 
 // this key is used to encrypt the users imap password which is stored
 // in the session record (and the client cookie if remember password is enabled).
 // please provide a string of exactly 24 chars.
-$config['des_key'] = '964af56991531a805bd55085';
+$config['des_key'] = '{{ roundcubemail_des_key }}';
 
 // ----------------------------------
 // PLUGINS
@@ -52,4 +52,4 @@ $config['plugins'] = array();
 // Since Google shut down their public spell checking service, the default settings
 // connect to http://spell.roundcube.net which is a hosted service provided by Roundcube.
 // You can connect to any other googie-compliant service by setting 'spellcheck_uri' accordingly.
-$config['spellcheck_engine'] = 'pspell';
+$config['spellcheck_engine'] = '{{ roundcubemail_spellcheck_engine }}';

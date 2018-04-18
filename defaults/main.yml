@@ -1,4 +1,14 @@
 ---
 # defaults file for roundcubemail
 
+# The URL to the database.
 roundcubemail_database_url: mysql://roundcube:pass@localhost/roundcubemail
+
+# A URL to get support.
+roundcubemail_support_url: "{{ ansible_fqdn }}/support"
+
+# A key to encrypt sensitive data.
+roundcubemail_des_key: 964af56991531a805bd55085
+
+# The spellchecker to use. Either: 'google', 'pspell', 'enchant' or 'atd'.
+roundcubemail_spellcheck_engine: pspell

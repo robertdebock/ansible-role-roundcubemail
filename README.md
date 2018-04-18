@@ -21,6 +21,9 @@ Role Variables
 --------------
 
 - roundcubemail_database_url - The URL to the database.
+- roundcubemail_support_url - A URL to send users to for support.
+- roundcubemail_des_key - A 24-character hexadecimal value to encrypt sensitive data.
+- roundcubemail_spellcheck_engine - the spellchecker to use.
 
 Dependencies
 ------------
