@@ -6,6 +6,12 @@
   with_items:
     - "{{ roundcubemail_configuration[ansible_distribution]['package'] }}"
 
+- name: install requirements
+  package:
+    name: "{{ item }}"
+  with_items:
+    - "{{ roundcubemail_configuration[ansible_distribution]['requirements'] }}"
+
 - name: configure php
   include_role:
     name: robertdebock.php
@@ -23,6 +29,8 @@
       extension:
         section: PHP
         value: mcrypt.so
+  notify:
+    - restart httpd
 
 - name: configure software
   template:
