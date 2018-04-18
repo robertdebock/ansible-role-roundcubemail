@@ -25,14 +25,12 @@ Alias /roundcubemail /usr/share/roundcubemail
 <Directory /usr/share/roundcubemail/installer/>
     <IfModule mod_authz_core.c>
         # Apache 2.4
-        Require local
+        Require all granted
     </IfModule>
     <IfModule !mod_authz_core.c>
         # Apache 2.2
-        Order Deny,Allow
-        Deny from all
-        Allow from 127.0.0.1
-        Allow from ::1
+        Order Allow,Deny
+        allow from all
     </IfModule>
 </Directory>
 
