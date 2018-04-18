@@ -3,6 +3,9 @@
 roundcubemail_configuration:
   Alpine:
     package: roundcubemail
+    requirements:
+      - php-mysql
+      - php-mcrypt
     file: /etc/roundcube/config.inc.php
     owner: root
     group: root
@@ -11,6 +14,9 @@ roundcubemail_configuration:
     httpd_service: apache2
   Archlinux:
     package: roundcubemail
+    requirements:
+      - php-mysql
+      - php-mcrypt
     file: /etc/webapps/roundcubemail/config/config.inc.php
     owner: root
     group: root
@@ -19,6 +25,9 @@ roundcubemail_configuration:
     httpd_service: httpd
   CentOS:
     package: roundcubemail
+    requirements:
+      - php-mysql
+      - php-mcrypt
     file: /etc/roundcubemail/config.inc.php
     owner: root
     group: apache
@@ -27,6 +36,9 @@ roundcubemail_configuration:
     httpd_service: httpd
   Debian:
     package: roundcube
+    requirements:
+      - php-mysql
+      - php-mcrypt
     file: /etc/roundcube/config.inc.php
     owner: root
     group: www-data
@@ -35,6 +47,9 @@ roundcubemail_configuration:
     httpd_service: apache2
   Fedora:
     package: roundcubemail
+    requirements:
+      - php-mysql
+      - php-mcrypt
     file: /etc/roundcubemail/config.inc.php
     owner: root
     group: apache
@@ -43,6 +58,9 @@ roundcubemail_configuration:
     httpd_service: httpd
   openSUSE Leap:
     package: roundcubemail
+    requirements:
+      - php-mysql
+      - php-mcrypt
     file: /etc/roundcubemail/config.inc.php
     owner: root
     group: root
@@ -51,6 +69,9 @@ roundcubemail_configuration:
     httpd_service: apache2
   Ubuntu:
     package: roundcube
+    requirements:
+      - php-mysql
+      - php-mcrypt
     file: /etc/roundcube/config.inc.php
     owner: root
     group: www-data
