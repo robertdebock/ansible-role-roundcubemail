@@ -14,9 +14,7 @@ roundcubemail_configuration:
     httpd_service: apache2
   Archlinux:
     package: roundcubemail
-    requirements:
-      - php-mysql
-      - php-mcrypt
+    requirements: []
     file: /etc/webapps/roundcubemail/config/config.inc.php
     owner: root
     group: root
