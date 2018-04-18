@@ -4,8 +4,8 @@ roundcubemail_configuration:
   Alpine:
     package: roundcubemail
     requirements:
-      - php-mysql
-      - php-mcrypt
+      - php7-mysqli
+      - php7-mcrypt
     file: /etc/roundcube/config.inc.php
     owner: root
     group: root
