@@ -9,7 +9,7 @@ roundcubemail_configuration:
     file: /etc/roundcube/config.inc.php
     owner: root
     group: root
-    mode: 0644
+    mode: '0644'
     httpd_conf: /etc/apache2/conf.d/roundcubemail.conf
     httpd_service: apache2
   Archlinux:
@@ -18,7 +18,7 @@ roundcubemail_configuration:
     file: /etc/webapps/roundcubemail/config/config.inc.php
     owner: root
     group: root
-    mode: 0644
+    mode: '0644'
     httpd_conf: /etc/httpd/conf/extra/roundcubemail.conf
     httpd_service: httpd
   CentOS:
@@ -29,7 +29,7 @@ roundcubemail_configuration:
     file: /etc/roundcubemail/config.inc.php
     owner: root
     group: apache
-    mode: 0640
+    mode: '0640'
     httpd_conf: /etc/httpd/conf.d/roundcubemail.conf
     httpd_service: httpd
   Debian:
@@ -39,7 +39,7 @@ roundcubemail_configuration:
     file: /etc/roundcube/config.inc.php
     owner: root
     group: www-data
-    mode: 0640
+    mode: '0640'
     httpd_conf: /etc/apache2/conf-enabled/roundcubemail.conf
     httpd_service: apache2
   Fedora:
@@ -50,7 +50,7 @@ roundcubemail_configuration:
     file: /etc/roundcubemail/config.inc.php
     owner: root
     group: apache
-    mode: 0640
+    mode: '0640'
     httpd_conf: /etc/httpd/conf.d/roundcubemail.conf
     httpd_service: httpd
   openSUSE Leap:
@@ -61,7 +61,7 @@ roundcubemail_configuration:
     file: /etc/roundcubemail/config.inc.php
     owner: root
     group: root
-    mode: 0644
+    mode: '0644'
     httpd_conf: /etc/apache2/conf.d/roundcubemail.conf
     httpd_service: apache2
   Ubuntu:
@@ -71,6 +71,6 @@ roundcubemail_configuration:
     file: /etc/roundcube/config.inc.php
     owner: root
     group: www-data
-    mode: 0640
+    mode: '0640'
     httpd_conf: /etc/apache2/conf-enabled/roundcubemail.conf
     httpd_service: apache2
