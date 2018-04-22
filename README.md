@@ -90,6 +90,67 @@ roles:
       name: robertdebock.roundcubemail
 ```
 
+If you don't want to manually setup roundcubemail, you have to import the database schemas. Here is a way to do that:
+```
+- name: configure shared items for databaseservers
+  hosts: databaseservers
+  become: yes
+  gather_facts: no
+  vars:
+    roundcube_mysql_files:
+      - mysql.initial.sql
+      - 2008030300.sql
+      - 2008040500.sql
+      - 2008060900.sql
+      - 2008092100.sql
+      - 2009090400.sql
+      - 2009103100.sql
+      - 2010042300.sql
+      - 2010100600.sql
+      - 2011011200.sql
+      - 2011092800.sql
+      - 2011111600.sql
+      - 2011121400.sql
+      - 2012080700.sql
+      - 2013011000.sql
+      - 2013042700.sql
+      - 2013052500.sql
+      - 2013061000.sql
+      - 2014042900.sql
+      - 2015030800.sql
+
+  handlers:
+    - name: create database
+      mysql_db:
+        name: roundcube
+        state: import
+        target: "/tmp/roundcube_mysql_files/{{ item }}"
+      with_items:
+        - "{{ roundcubemail_mysql_files }}"
+
+  tasks:
+    - name: mysql
+      include_role:
+        name: robertdebock.mysql
+
+    - name: copy database import files
+      copy:
+        src: "{{ item }}"
+        dest: /tmp/roundcube_mysql_files/
+      with_items:
+        - "{{ roundcubemail_mysql_files }}"
+      notify:
+        - create database
+
+    - name: create user
+      mysql_user:
+        name: roundcube
+        password: roundcube
+        priv: "*.*:ALL"
+        host: "{{ hostvars[groups['webservers'][0]]['ansible_eth0']['ipv4']['address'] }}"
+
+```
+
 Install this role using `galaxy install robertdebock.roundcubemail`.
 
 License
