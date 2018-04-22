@@ -96,37 +96,13 @@ If you don't want to manually setup roundcubemail, you have to import the databa
   hosts: databaseservers
   become: yes
   gather_facts: no
-  vars:
-    roundcube_mysql_files:
-      - mysql.initial.sql
-      - 2008030300.sql
-      - 2008040500.sql
-      - 2008060900.sql
-      - 2008092100.sql
-      - 2009090400.sql
-      - 2009103100.sql
-      - 2010042300.sql
-      - 2010100600.sql
-      - 2011011200.sql
-      - 2011092800.sql
-      - 2011111600.sql
-      - 2011121400.sql
-      - 2012080700.sql
-      - 2013011000.sql
-      - 2013042700.sql
-      - 2013052500.sql
-      - 2013061000.sql
-      - 2014042900.sql
-      - 2015030800.sql
 
   handlers:
     - name: create database
       mysql_db:
         name: roundcube
         state: import
-        target: "/tmp/roundcube_mysql_files/{{ item }}"
-      with_items:
-        - "{{ roundcubemail_mysql_files }}"
+        target: /tmp/roundcube_mysql_files/mysql.initial.sql
 
   tasks:
     - name: mysql
@@ -135,10 +111,8 @@ If you don't want to manually setup roundcubemail, you have to import the databa
 
     - name: copy database import files
       copy:
-        src: "{{ item }}"
+        src: mysql.initial.sql
         dest: /tmp/roundcube_mysql_files/
-      with_items:
-        - "{{ roundcubemail_mysql_files }}"
       notify:
         - create database
 
@@ -148,6 +122,50 @@ If you don't want to manually setup roundcubemail, you have to import the databa
         password: roundcube
         priv: "*.*:ALL"
         host: "{{ hostvars[groups['webservers'][0]]['ansible_eth0']['ipv4']['address'] }}"
+
+- name: configure shared items for webservers
+  hosts: webservers
+  become: yes
+  gather_facts: no
+
+  tasks:
+    - name: buildtools
+      include_role:
+        name: robertdebock.buildtools
+
+    - name: epel
+      include_role:
+        name: robertdebock.epel
+
+    - name: scl
+      include_role:
+        name: robertdebock.scl
+
+    - name: python-pip
+      include_role:
+        name: robertdebock.python-pip
+
+    - name: httpd
+      include_role:
+        name: robertdebock.httpd
+
+    - name: php
+      include_role:
+        name: robertdebock.php
+      vars:
+        php_settings:
+          display_errors:
+            section: PHP
+            value: "On"
+          display_startup_errors:
+            section: PHP
+            value: "On"
+
+    - name: roundcubemail
+      include_role:
+        name: robertdebock.roundcubemail
+      vars:
+        roundcubemail_database_url: "mysql://roundcube:roundcube@{{ hostvars[groups['databaseservers'][0]]['ansible_eth0']['ipv4']['address'] }}/roundcube"
 
 ```
 
