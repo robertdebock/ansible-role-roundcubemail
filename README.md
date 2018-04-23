@@ -69,22 +69,11 @@ Example Playbook
 roles:
   - role: robertdebock.bootstrap
   - role: robertdebock.php
-  - role: robertdebock.mysql
   - role: robertdebock.buildtools
   - role: robertdebock.python-pip
   - role: robertdebock.httpd
 
   tasks:
-  - name: create database
-    mysql_db:
-      name: bobdata
-
-  - name: create user
-    mysql_user:
-      name: bob
-      password: 12345
-      priv: '*.*:ALL'
-
   - name: include roundcubemail role
     include_role:    
       name: robertdebock.roundcubemail
