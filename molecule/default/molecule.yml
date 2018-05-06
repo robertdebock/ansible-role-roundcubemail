@@ -34,10 +34,10 @@ platforms:
     image: fedora:24
   - name: roundcubemail-fedora-25
     image: fedora:25
-  - name: roundcubemail-fedora-26
-    image: fedora:26
   - name: roundcubemail-fedora-27
     image: fedora:27
+  - name: roundcubemail-fedora-28
+    image: fedora:28
   - name: roundcubemail-opensuse-42.2
     image: opensuse:42.2
   - name: roundcubemail-opensuse-42.3
