@@ -11,7 +11,6 @@ roundcubemail_configuration:
     group: root
     mode: '0644'
     httpd_conf: /etc/apache2/conf.d/roundcubemail.conf
-    httpd_service: apache2
   Archlinux:
     package: roundcubemail
     requirements: []
@@ -20,7 +19,6 @@ roundcubemail_configuration:
     group: root
     mode: '0644'
     httpd_conf: /etc/httpd/conf/extra/roundcubemail.conf
-    httpd_service: httpd
   CentOS:
     package: roundcubemail
     requirements:
@@ -31,7 +29,6 @@ roundcubemail_configuration:
     group: apache
     mode: '0640'
     httpd_conf: /etc/httpd/conf.d/roundcubemail.conf
-    httpd_service: httpd
   Debian:
     package: roundcube
     requirements:
@@ -41,7 +38,6 @@ roundcubemail_configuration:
     group: www-data
     mode: '0640'
     httpd_conf: /etc/apache2/conf-enabled/roundcubemail.conf
-    httpd_service: apache2
   Fedora:
     package: roundcubemail
     requirements:
@@ -52,7 +48,6 @@ roundcubemail_configuration:
     group: apache
     mode: '0640'
     httpd_conf: /etc/httpd/conf.d/roundcubemail.conf
-    httpd_service: httpd
   openSUSE Leap:
     package: roundcubemail
     requirements:
@@ -63,7 +58,6 @@ roundcubemail_configuration:
     group: root
     mode: '0644'
     httpd_conf: /etc/apache2/conf.d/roundcubemail.conf
-    httpd_service: apache2
   Ubuntu:
     package: roundcube
     requirements:
@@ -73,4 +67,3 @@ roundcubemail_configuration:
     group: www-data
     mode: '0640'
     httpd_conf: /etc/apache2/conf-enabled/roundcubemail.conf
-    httpd_service: apache2
