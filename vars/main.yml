@@ -58,6 +58,16 @@ roundcubemail_configuration:
     group: root
     mode: '0644'
     httpd_conf: /etc/apache2/conf.d/roundcubemail.conf
+  openSUSE Tumbleweed:
+    package: roundcubemail
+    requirements:
+      - php-mysql
+      - php-mcrypt
+    file: /etc/roundcubemail/config.inc.php
+    owner: root
+    group: root
+    mode: '0644'
+    httpd_conf: /etc/apache2/conf.d/roundcubemail.conf
   Ubuntu:
     package: roundcube
     requirements:
