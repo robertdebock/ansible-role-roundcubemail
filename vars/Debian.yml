@@ -1,10 +1,10 @@
 ---
-# vars file for roundcubemail
-roundcube_package: roundcube
-roundcube_requirements:
+# vars file for roundcubemailmail
+roundcubemail_package: roundcube
+roundcubemail_requirements:
   - php-mysql
-roundcube_file: /etc/roundcube/config.inc.php
-roundcube_owner: root
-roundcube_group: www-data
-roundcube_mode: '0640'
-roundcube_httpd_conf: /etc/apache2/conf-enabled/roundcubemail.conf
+roundcubemail_file: /etc/roundcube/config.inc.php
+roundcubemail_owner: root
+roundcubemail_group: www-data
+roundcubemail_mode: '0640'
+roundcubemail_httpd_conf: /etc/apache2/conf-enabled/roundcubemail.conf
