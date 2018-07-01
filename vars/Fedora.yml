@@ -1,0 +1,12 @@
+---
+# vars file for roundcubemail
+owncloud_roundcubemail_configuration:
+owncloud_package: roundcubemail
+owncloud_requirements:
+  - php-mysqlnd
+  - php-mcrypt
+owncloud_file: /etc/roundcubemail/config.inc.php
+owncloud_owner: root
+owncloud_group: apache
+owncloud_mode: '0640'
+owncloud_httpd_conf: /etc/httpd/conf.d/roundcubemail.conf
