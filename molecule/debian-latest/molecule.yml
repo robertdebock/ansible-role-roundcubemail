@@ -8,14 +8,14 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: roundcubemail-debian-buster
-    image: debian:buster
+  - name: roundcubemail-debian-latest
+    image: debian:latest
 provisioner:
   name: ansible
   lint:
     name: ansible-lint
 scenario:
-  name: debian-buster
+  name: debian-latest
 verifier:
   name: goss
   lint:
