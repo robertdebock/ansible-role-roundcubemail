@@ -38,11 +38,11 @@ galaxy_info:
 
   galaxy_tags:
     - roundcubemail
-    - Alpine
-    - CentOS
-    - Debian
-    - Fedora
-    - RHEL
-    - Ubuntu
+    - alpine
+    - centos
+    - debian
+    - fedora
+    - rhel
+    - ubuntu
 
 dependencies: []
