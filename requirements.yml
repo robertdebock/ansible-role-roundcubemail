@@ -2,7 +2,7 @@
 - robertdebock.bootstrap
 - robertdebock.epel
 - robertdebock.php
-- robertdebock.python-pip
+- robertdebock.python_pip
 - robertdebock.buildtools
 - robertdebock.scl
 - robertdebock.httpd

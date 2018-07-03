@@ -69,7 +69,7 @@ roles:
   - role: robertdebock.php
   - role: robertdebock.mysql
   - role: robertdebock.buildtools
-  - role: robertdebock.python-pip
+  - role: robertdebock.python_pip
   - role: robertdebock.httpd
 
   tasks:
@@ -139,9 +139,9 @@ If you don't want to manually setup roundcubemail, you have to import the databa
       include_role:
         name: robertdebock.scl
 
-    - name: python-pip
+    - name: python_pip
       include_role:
-        name: robertdebock.python-pip
+        name: robertdebock.python_pip
 
     - name: httpd
       include_role:
