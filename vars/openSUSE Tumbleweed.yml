@@ -3,7 +3,6 @@
 roundcubemail_package: roundcubemail
 roundcubemail_requirements:
   - php-mysql
-  - php-mcrypt
 roundcubemail_file: /etc/roundcubemail/config.inc.php
 roundcubemail_owner: root
 roundcubemail_group: root
