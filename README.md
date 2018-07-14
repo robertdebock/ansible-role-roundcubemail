@@ -42,21 +42,21 @@ Compatibility
 
 This role has been tested against the following distributions and Ansible version:
 
-|distribution|ansible 2.3|ansible 2.4|ansible 2.5|
+|distribution|ansible 2.4|ansible 2.5|ansible 2.6|
 |------------|-----------|-----------|-----------|
-|alpine-latest|no|yes|yes|
-|alpine-edge|no|yes|yes|
-|archlinux|no|yes|yes|
+|alpine-edge|yes|yes|yes|
+|alpine-latest|yes|yes|yes|
+|archlinux|yes|yes|yes|
 |centos-6|no|no|no|
-|centos-latest|no|yes|yes|
-|debian-stable|no|yes|yes|
-|debian-latest|no|yes|yes|
-|fedora-latest|no|yes|yes|
-|fedora-rawhide|no|yes|yes|
-|opensuse-leap|no|yes|yes|
-|opensuse-tumbleweed|no|yes|yes|
-|ubuntu-artful|no|yes|yes|
-|ubuntu-latest|no|yes|yes|
+|centos-latest|yes|yes|yes|
+|debian-latest|yes|yes|yes|
+|debian-stable|yes|yes|yes|
+|fedora-latest|yes|yes|yes|
+|fedora-rawhide|yes|yes|yes|
+|opensuse-leap|yes|yes|yes|
+|opensuse-tumbleweed|yes|yes|yes|
+|ubuntu-artful|yes|yes|yes|
+|ubuntu-latest|yes|yes|yes|
 
 Example Playbook
 ----------------
