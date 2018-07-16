@@ -135,10 +135,6 @@ If you don't want to manually setup roundcubemail, you have to import the databa
       include_role:
         name: robertdebock.epel
 
-    - name: scl
-      include_role:
-        name: robertdebock.scl
-
     - name: python_pip
       include_role:
         name: robertdebock.python_pip
