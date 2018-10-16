@@ -18,9 +18,11 @@ roundcubemail_requirements:
   Ubuntu:
     - php-mysql
 
-roundcubemail_file:
-  default: /etc/roundcubemail/config.inc.php
-  Archlinux: /etc/webapps/roundcubemail/config/config.inc.php
+roundcubemail_conf_dir:
+  default: /etc/roundcubemail
+  Archlinux: /etc/webapps/roundcubemail/config
+
+roundcubemail_file: config.inc.php
 
 roundcubemail_owner: root
 

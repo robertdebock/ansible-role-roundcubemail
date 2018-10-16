@@ -33,11 +33,18 @@
   notify:
     - restart httpd
 
+- name: create roundcubemail_conf_dir
+  file:
+    path: "{{ roundcubemail_conf_dir[ansible_distribution]
+          | default(roundcubemail_conf_dir['default']) }}"
+    state: directory
+
 - name: configure roundcubemail
   template:
     src: config.inc.php.j2
-    dest: "{{ roundcubemail_file[ansible_distribution]
-          | default(roundcubemail_file['default']) }}"
+    dest: "{{ roundcubemail_conf_dir[ansible_distribution]
+          | default(roundcubemail_conf_dir['default']) }}
+          /{{ roundcubemail_file }}"
     owner: "{{ roundcubemail_owner }}"
     group: "{{ roundcubemail_group[ansible_distribution]
            | default(roundcubemail_group['default']) }}"
