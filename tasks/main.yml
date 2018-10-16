@@ -1,28 +1,15 @@
 ---
 # tasks file for roundcubemail
-- name: load default variables
-  include_vars:
-    file: default.yml
-
-- name: load os-specific variables
-  include_vars: "{{ item }}"
-  with_first_found:
-    - "{{ ansible_distribution }}.yml"
-    - default.yml
-
 - name: install software
   package:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - "{{ roundcubemail_package }}"
+    name: "{{ roundcubemail_package }}"
+    state: "{{ roundcubemail_package_state }}"
 
 - name: install requirements
   package:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - "{{ roundcubemail_requirements }}"
+    name: "{{ roundcubemail_requirementes[ansible_distribution]
+          | default(roundcubemail_requirementes['default']) }}"
+    state: "{{ roundcubemail_package_state }}"
   notify:
     - restart httpd
 
@@ -49,14 +36,18 @@
 - name: configure software
   template:
     src: config.inc.php.j2
-    dest: "{{ roundcubemail_file }}"
+    dest: "{{ roundcubemail_file[ansible_distribution]
+          | default(roundcubemail_file['default']) }}"
     owner: "{{ roundcubemail_owner }}"
-    group: "{{ roundcubemail_group }}"
-    mode: "{{ roundcubemail_mode }}"
+    group: "{{ roundcubemail_group[ansible_distribution]
+           | default(roundcubemail_group['default']) }}"
+    mode: "{{ roundcubemail_mode[ansible_distribution]
+           | default(roundcubemail_mode['default']) }}"
 
 - name: configure httpd
   template:
     src: roundcubemail.conf.j2
-    dest: "{{ roundcubemail_httpd_conf }}"
+    dest: "{{ roundcubemail_httpd_conf[ansible_distribution]
+          | default(roundcubemail_httpd_configuration['default']) }}"
   notify:
     - restart httpd

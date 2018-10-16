@@ -1,0 +1,50 @@
+---
+dependency:
+  name: galaxy
+  options:
+    role-file: requirements.yml
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: roundcubemail-alpine-edge
+    image: alpine:edge
+    command: sh -c "while true ; do sleep 1 ; done"
+  - name: roundcubemail-alpine-latest
+    image: alpine:latest
+    command: sh -c "while true ; do sleep 1 ; done"
+  - name: roundcubemail-archlinux
+    image: base/archlinux
+  - name: roundcubemail-centos-6
+    image: centos:6
+  - name: roundcubemail-centos-latest
+    image: centos:latest
+  - name: roundcubemail-debian-latest
+    image: debian:latest
+  - name: roundcubemail-debian-stable
+    image: debian:stable
+  - name: roundcubemail-debian-unstable
+    image: debian:unstable
+  - name: roundcubemail-fedora-latest
+    image: fedora:latest
+  - name: roundcubemail-fedora-rawhide
+    image: fedora:rawhide
+  - name: roundcubemail-opensuse-leap
+    image: opensuse:leap
+  - name: roundcubemail-opensuse-tumbleweed
+    image: opensuse:tumbleweed
+  - name: roundcubemail-ubuntu-artful
+    image: ubuntu:artful
+  - name: roundcubemail-ubuntu-devel
+    image: ubuntu:devel
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+scenario:
+  name: default
+verifier:
+  name: goss
+  lint:
+    name: yamllint
