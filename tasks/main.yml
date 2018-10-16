@@ -1,14 +1,14 @@
 ---
 # tasks file for roundcubemail
-- name: install software
+- name: install roundcubemail
   package:
     name: "{{ roundcubemail_package }}"
     state: "{{ roundcubemail_package_state }}"
 
 - name: install requirements
   package:
-    name: "{{ roundcubemail_requirementes[ansible_distribution]
-          | default(roundcubemail_requirementes['default']) }}"
+    name: "{{ roundcubemail_requirements[ansible_distribution]
+          | default(roundcubemail_requirements['default']) }}"
     state: "{{ roundcubemail_package_state }}"
   notify:
     - restart httpd
@@ -33,7 +33,7 @@
   notify:
     - restart httpd
 
-- name: configure software
+- name: configure roundcubemail
   template:
     src: config.inc.php.j2
     dest: "{{ roundcubemail_file[ansible_distribution]
@@ -47,7 +47,7 @@
 - name: configure httpd
   template:
     src: roundcubemail.conf.j2
-    dest: "{{ roundcubemail_httpd_conf[ansible_distribution]
+    dest: "{{ roundcubemail_httpd_configuration[ansible_distribution]
           | default(roundcubemail_httpd_configuration['default']) }}"
   notify:
     - restart httpd

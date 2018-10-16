@@ -1,9 +1,0 @@
----
-# vars file for roundcubemailmail
-roundcubemail_package: roundcubemail
-roundcubemail_requirements: []
-roundcubemail_file: /etc/webapps/roundcubemail/config/config.inc.php
-roundcubemail_owner: root
-roundcubemail_group: root
-roundcubemail_mode: '0644'
-roundcubemail_httpd_conf: /etc/httpd/conf/extra/roundcubemail.conf

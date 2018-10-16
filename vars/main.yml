@@ -12,6 +12,9 @@ roundcubemail_requirements:
   Archlinux: []
   Debian:
     - php-mysql
+  Fedora:
+    - php-mysqlnd
+    - php-mcrypt
   Ubuntu:
     - php-mysql
 
@@ -37,7 +40,7 @@ roundcubemail_mode:
   openSUSE Leap: "0644"
   openSUSE Tumbleweed: "0644"
 
-roundcubemail_httpd_conf:
+roundcubemail_httpd_configuration:
   default: /etc/httpd/conf.d/roundcubemail.conf
   Alpine: /etc/apache2/conf.d/roundcubemail.conf
   Debian: /etc/apache2/conf-enabled/roundcubemail.conf
