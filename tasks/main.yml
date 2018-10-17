@@ -43,8 +43,7 @@
   template:
     src: config.inc.php.j2
     dest: "{{ roundcubemail_conf_dir[ansible_distribution]
-          | default(roundcubemail_conf_dir['default']) }}
-          /{{ roundcubemail_file }}"
+          | default(roundcubemail_conf_dir['default']) }}/{{ roundcubemail_file }}"
     owner: "{{ roundcubemail_owner }}"
     group: "{{ roundcubemail_group[ansible_distribution]
            | default(roundcubemail_group['default']) }}"
