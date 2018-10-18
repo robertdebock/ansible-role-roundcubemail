@@ -2,7 +2,8 @@
 # tasks file for roundcubemail
 - name: install roundcubemail
   package:
-    name: "{{ roundcubemail_package }}"
+    name: "{{ roundcubemail_packages[ansible_distribution]
+          | default(roundcubemail_packages['default']) }}"
     state: "{{ roundcubemail_package_state }}"
 
 - name: install requirements
