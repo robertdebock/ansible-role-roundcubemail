@@ -5,6 +5,8 @@ roundcubemail_packages:
     - roundcubemail
   Debian:
     - roundcube
+  Ubuntu:
+    - roundcube
 
 roundcubemail_requirements:
   default:
@@ -21,6 +23,11 @@ roundcubemail_requirements:
     - php-mcrypt
   Ubuntu:
     - php-mysql
+  openSUSE Leap:
+    - php7-mcrypt
+    - php7-mysql
+  openSUSE Tumbleweed:
+    - php7-mysql
 
 roundcubemail_conf_dir:
   default: /etc/roundcubemail

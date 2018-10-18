@@ -31,8 +31,6 @@
       extension:
         section: PHP
         value: mcrypt.so
-  notify:
-    - restart httpd
 
 - name: create roundcubemail_conf_dir
   file:
