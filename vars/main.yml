@@ -1,6 +1,6 @@
 ---
 # vars file for roundcubemailmail
-roundcubemail_packages:
+_roundcubemail_packages:
   default:
     - roundcubemail
   Debian:
@@ -8,7 +8,9 @@ roundcubemail_packages:
   Ubuntu:
     - roundcube
 
-roundcubemail_requirements:
+roundcubemail_packages: "{{ _roundcubemail_packages[ansible_distribution] | default(_roundcubemail_packages['default']) }}"
+
+_roundcubemail_requirements:
   default:
     - php-mysql
     - php-mcrypt
@@ -29,15 +31,19 @@ roundcubemail_requirements:
   openSUSE Tumbleweed:
     - php7-mysql
 
-roundcubemail_conf_dir:
+roundcubemail_requirements: "{{ _roundcubemail_requirements[ansible_distribution] | default(_roundcubemail_requirements['default']) }}"
+
+_roundcubemail_conf_dir:
   default: /etc/roundcubemail
   Archlinux: /etc/webapps/roundcubemail/config
+
+roundcubemail_conf_dir: "{{ _roundcubemail_conf_dir[ansible_distribution] | default(_roundcubemail_conf_dir['default']) }}"
 
 roundcubemail_file: config.inc.php
 
 roundcubemail_owner: root
 
-roundcubemail_group:
+_roundcubemail_group:
   default: apache
   Alpine: root
   Archlinux: root
@@ -46,17 +52,23 @@ roundcubemail_group:
   openSUSE Leap: root
   openSUSE Tumbleweed: root
 
-roundcubemail_mode:
+roundcubemail_group: "{{ _roundcubemail_group[ansible_distribution] | default(_roundcubemail_group['default']) }}"
+
+_roundcubemail_mode:
   default: "0640"
   Alpine: "0644"
   Archlinux: "0644"
   openSUSE Leap: "0644"
   openSUSE Tumbleweed: "0644"
 
-roundcubemail_httpd_configuration:
+roundcubemail_mode: "{{ _roundcubemail_mode[ansible_distribution] | default(_roundcubemail_mode['default']) }}"
+
+_roundcubemail_httpd_configuration:
   default: /etc/httpd/conf.d/roundcubemail.conf
   Alpine: /etc/apache2/conf.d/roundcubemail.conf
   Debian: /etc/apache2/conf-enabled/roundcubemail.conf
   Ubuntu: /etc/apache2/conf-enabled/roundcubemail.conf
   openSUSE Leap: /etc/apache2/conf.d/roundcubemail.conf
   openSUSE Tumbleweed: /etc/apache2/conf.d/roundcubemail.conf
+
+roundcubemail_httpd_configuration: "{{ _roundcubemail_httpd_configuration[ansible_distribution] | default(_roundcubemail_httpd_configuration['default']) }}"
