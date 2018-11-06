@@ -3,8 +3,7 @@ roundcubemail
 
 [![Build Status](https://travis-ci.org/robertdebock/ansible-role-roundcubemail.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-roundcubemail)
 
-Provides roundcubemail for your system.
-
+The purpose of this role is to install and configure roundcubemail on your system.
 
 Example Playbook
 ----------------
