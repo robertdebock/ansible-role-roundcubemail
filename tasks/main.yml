@@ -1,16 +1,16 @@
 ---
 # tasks file for roundcubemail
-- name: install roundcubemail
-  package:
-    name: "{{ roundcubemail_packages }}"
-    state: "{{ roundcubemail_package_state }}"
-
 - name: install requirements
   package:
     name: "{{ roundcubemail_requirements }}"
     state: "{{ roundcubemail_package_state }}"
   notify:
     - restart httpd
+
+- name: install roundcubemail
+  package:
+    name: "{{ roundcubemail_packages }}"
+    state: "{{ roundcubemail_package_state }}"
 
 - name: configure php
   include_role:
