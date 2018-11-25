@@ -36,6 +36,8 @@ roundcubemail_requirements: "{{ _roundcubemail_requirements[ansible_distribution
 _roundcubemail_conf_dir:
   default: /etc/roundcubemail
   Archlinux: /etc/webapps/roundcubemail/config
+  Debian: /etc/roundcube
+  Ubuntu: /etc/roundcube
 
 roundcubemail_conf_dir: "{{ _roundcubemail_conf_dir[ansible_distribution] | default(_roundcubemail_conf_dir['default']) }}"
 
