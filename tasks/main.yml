@@ -6,11 +6,17 @@
     state: "{{ roundcubemail_package_state }}"
   notify:
     - restart httpd
+  register: roundcubemail_install_requirements
+  until: roundcubemail_install_requirements
+  retries: 3
 
 - name: install roundcubemail
   package:
     name: "{{ roundcubemail_packages }}"
     state: "{{ roundcubemail_package_state }}"
+  register: roundcubemail_install_roundcubemail
+  until: roundcubemail_install_roundcubemail
+  retries: 3
 
 - name: configure php
   include_role:
