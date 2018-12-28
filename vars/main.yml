@@ -1,5 +1,9 @@
 ---
 # vars file for roundcubemailmail
+roundcubemail_database_url: mysql://{{ roundcubemail_database_user }}:{{ roundcubemail_database_password }}@{{ roundcubemail_database_host }}/{{ roundcubemail_database_name }}
+
+roundcubemail_database_target: /usr/share/roundcubemail/SQL/mysql.initial.sql
+
 _roundcubemail_packages:
   default:
     - roundcubemail

@@ -1,0 +1,12 @@
+---
+# handlers file for roundcubemail
+- name: import mysql table layout
+  mysql_db:
+    state: import
+    name: "{{ roundcubemail_database_name }}"
+    target: "{{ roundcubemail_database_target }}"
+    login_host: "{{ roundcubemail_database_host }}"
+    login_user: "{{ roundcubemail_database_user }}"
+    login_password: "{{ roundcubemail_database_password }}"
+  when:
+    - ansible_virtualization_type != "docker" or roundcubemail_ignore_docker

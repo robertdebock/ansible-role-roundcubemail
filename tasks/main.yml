@@ -17,6 +17,8 @@
   register: roundcubemail_install_roundcubemail
   until: roundcubemail_install_roundcubemail
   retries: 3
+  notify:
+    - import mysql table layout
 
 - name: configure php
   include_role:

@@ -34,8 +34,10 @@ These variables are set in `defaults/main.yml`:
 ---
 # defaults file for roundcubemail
 
-# The URL to the database.
-roundcubemail_database_url: mysql://roundcube:pass@localhost/roundcubemail
+roundcubemail_database_host: localhost
+roundcubemail_database_user: roundcube
+roundcubemail_database_password: pass
+roundcubemail_database_name: roundcubemail
 
 # A URL to get support.
 roundcubemail_support_url: "{{ ansible_fqdn }}/support"
@@ -48,6 +50,11 @@ roundcubemail_spellcheck_engine: pspell
 
 # To update all packages installed by this roles, set `roundcubemail_package_state` to `latest`.
 roundcubemail_package_state: present
+
+# Some Docker containers do not allow managing services, rebooting and writing
+# to some locations in /etc. The role skips tasks that will typically fail in
+# Docker. With this parameter you can tell the role to -not- skip these tasks.
+roundcubemail_ignore_docker: yes
 
 ```
 

@@ -21,6 +21,7 @@ provisioner:
     group_vars:
       all:
         httpd_ignore_docker: no
+        roundcubemail_ignore_docker: no
 scenario:
   name: centos-6
 verifier:
