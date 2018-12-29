@@ -10,3 +10,12 @@
     login_password: "{{ roundcubemail_database_password }}"
   when:
     - ansible_virtualization_type != "docker" or roundcubemail_ignore_docker
+
+- name: create roundcubemail selinux mod
+  command: checkmodule -M -m -o /etc/my-roundcubemail.mod /etc/my-roundcubemail.te
+
+- name: create roundcubemail selinux pp
+  command: semodule_package -o /etc/my-roundcubemail.pp -m /etc/my-roundcubemail.mod
+
+- name: load roundcubemail selinux pp
+  command: semodule -i /etc/my-roundcubemail.pp
