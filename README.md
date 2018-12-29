@@ -16,12 +16,21 @@ This example is taken from `molecule/default/playbook.yml`:
   become: true
   gather_facts: false
 
+  vars:
+    mysql_users:
+      - name: roundcube
+        password: pass
+        priv: "roundcubemail.*:ALL"
+    mysql_databases:
+      - name: roundcubemail
+
   roles:
     - robertdebock.bootstrap
     - robertdebock.epel
     - robertdebock.buildtools
     - robertdebock.python_pip
     - robertdebock.httpd
+    - robertdebock.mysql
     - robertdebock.roundcubemail
 
 ```
@@ -72,6 +81,7 @@ The following roles can be installed to ensure all requirements are met, using `
 - robertdebock.php
 - robertdebock.python_pip
 - robertdebock.buildtools
+- robertdebock.mysql
 - robertdebock.httpd
 
 

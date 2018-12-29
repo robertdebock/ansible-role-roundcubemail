@@ -4,10 +4,19 @@
   become: true
   gather_facts: false
 
+  vars:
+    mysql_users:
+      - name: roundcube
+        password: pass
+        priv: "roundcubemail.*:ALL"
+    mysql_databases:
+      - name: roundcubemail
+
   roles:
     - robertdebock.bootstrap
-    - robertdebock.php
+    - robertdebock.epel
     - robertdebock.buildtools
     - robertdebock.python_pip
     - robertdebock.httpd
+    - robertdebock.mysql
     - ansible-role-roundcubemail
