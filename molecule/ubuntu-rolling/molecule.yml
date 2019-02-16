@@ -8,8 +8,8 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: roundcubemail-ubuntu-artful
-    image: ubuntu:artful
+  - name: roundcubemail-ubuntu-rolling
+    image: ubuntu:rolling
 provisioner:
   name: ansible
   lint:
@@ -24,7 +24,7 @@ provisioner:
         mysql_ignore_docker: no
         roundcubemail_ignore_docker: no
 scenario:
-  name: ubuntu-artful
+  name: ubuntu-rolling
 verifier:
   name: goss
   lint:

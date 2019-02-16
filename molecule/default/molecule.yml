@@ -34,8 +34,10 @@ platforms:
     image: opensuse:leap
   - name: roundcubemail-opensuse-tumbleweed
     image: opensuse:tumbleweed
-  - name: roundcubemail-ubuntu-artful
-    image: ubuntu:artful
+  - name: roundcubemail-ubuntu-latest
+    image: ubuntu:latest
+  - name: roundcubemail-ubuntu-rolling
+    image: ubuntu:rolling
   - name: roundcubemail-ubuntu-devel
     image: ubuntu:devel
   - name: roundcubemail-ubuntu-latest
