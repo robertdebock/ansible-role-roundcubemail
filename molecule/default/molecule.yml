@@ -32,8 +32,6 @@ platforms:
     image: fedora:rawhide
   - name: roundcubemail-opensuse-leap
     image: opensuse:leap
-  - name: roundcubemail-opensuse-tumbleweed
-    image: opensuse:tumbleweed
   - name: roundcubemail-ubuntu-latest
     image: ubuntu:latest
   - name: roundcubemail-ubuntu-rolling
