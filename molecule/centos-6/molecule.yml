@@ -25,7 +25,3 @@ provisioner:
         roundcubemail_ignore_docker: no
 scenario:
   name: centos-6
-verifier:
-  name: goss
-  lint:
-    name: yamllint

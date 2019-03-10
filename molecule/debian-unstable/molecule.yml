@@ -25,7 +25,3 @@ provisioner:
         roundcubemail_ignore_docker: no
 scenario:
   name: debian-unstable
-verifier:
-  name: goss
-  lint:
-    name: yamllint

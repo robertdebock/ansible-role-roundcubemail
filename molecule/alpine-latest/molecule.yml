@@ -26,7 +26,3 @@ provisioner:
         roundcubemail_ignore_docker: no
 scenario:
   name: alpine-latest
-verifier:
-  name: goss
-  lint:
-    name: yamllint
