@@ -23,6 +23,19 @@ This example is taken from `molecule/default/playbook.yml`:
         priv: "roundcubemail.*:ALL"
     mysql_databases:
       - name: roundcubemail
+    php_settings:
+      upload_max_filesize:
+        section: PHP
+        value: 5M
+      post_max_size:
+        section: PHP
+        value: 6M
+      date.timezone:
+        section: Date
+        value: Europe/Amsterdam
+      extension:
+        section: PHP
+        value: mcrypt.so
 
   roles:
     - robertdebock.bootstrap
@@ -30,9 +43,9 @@ This example is taken from `molecule/default/playbook.yml`:
     - robertdebock.buildtools
     - robertdebock.python_pip
     - robertdebock.httpd
+    - robertdebock.php
     - robertdebock.mysql
     - robertdebock.roundcubemail
-
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -66,7 +79,6 @@ roundcubemail_package_state: present
 # to some locations in /etc. The role skips tasks that will typically fail in
 # Docker. With this parameter you can tell the role to -not- skip these tasks.
 roundcubemail_ignore_docker: yes
-
 ```
 
 Requirements
