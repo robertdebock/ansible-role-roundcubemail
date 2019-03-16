@@ -17,6 +17,7 @@ This example is taken from `molecule/default/playbook.yml`:
   gather_facts: yes
 
   roles:
+    - robertdebock.httpd
     - robertdebock.roundcubemail
 ```
 
