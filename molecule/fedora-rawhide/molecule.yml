@@ -3,30 +3,22 @@ dependency:
   name: galaxy
   options:
     role-file: requirements.yml
-driver:
-  name: docker
 lint:
   name: yamllint
+driver:
+  name: docker
 platforms:
   - name: roundcubemail-fedora-rawhide
     image: fedora:rawhide
+    pre_build_image: yes
     registry:
       url: registry.fedoraproject.org
 provisioner:
   name: ansible
+  playbooks:
+    prepare: ../resources/prepare.yml
+    converge: ../resources/playbook.yml
   lint:
     name: ansible-lint
-  config_options:
-    defaults:
-      callback_plugins: /usr/lib/python2.7/site-packages/ara/plugins/callbacks
-  inventory:
-    host_vars:
-      roundcubemail-fedora-rawhide:
-        ansible_python_interpreter: /usr/bin/python3
-    group_vars:
-      all:
-        httpd_ignore_docker: no
-        mysql_ignore_docker: no
-        roundcubemail_ignore_docker: no
 scenario:
   name: fedora-rawhide

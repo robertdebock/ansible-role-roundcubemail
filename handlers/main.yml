@@ -9,7 +9,7 @@
     login_user: "{{ roundcubemail_database_user }}"
     login_password: "{{ roundcubemail_database_password }}"
   when:
-    - ansible_virtualization_type != "docker" or roundcubemail_ignore_docker
+    - ansible_virtualization_type != "docker"
 
 - name: create roundcubemail selinux mod
   command: checkmodule -M -m -o /etc/my-roundcubemail.mod /etc/my-roundcubemail.te

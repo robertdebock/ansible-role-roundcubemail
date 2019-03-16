@@ -3,7 +3,7 @@
 - name: install requirements
   package:
     name: "{{ roundcubemail_requirements }}"
-    state: "{{ roundcubemail_package_state }}"
+    state: present
   notify:
     - restart httpd
   register: roundcubemail_install_requirements
@@ -13,7 +13,7 @@
 - name: install roundcubemail
   package:
     name: "{{ roundcubemail_packages }}"
-    state: "{{ roundcubemail_package_state }}"
+    state: present
   register: roundcubemail_install_roundcubemail
   until: roundcubemail_install_roundcubemail
   retries: 3

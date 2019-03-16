@@ -3,25 +3,20 @@ dependency:
   name: galaxy
   options:
     role-file: requirements.yml
-driver:
-  name: docker
 lint:
   name: yamllint
+driver:
+  name: docker
 platforms:
   - name: roundcubemail-ubuntu-devel
     image: ubuntu:devel
+    pre_build_image: yes
 provisioner:
   name: ansible
+  playbooks:
+    prepare: ../resources/prepare.yml
+    converge: ../resources/playbook.yml
   lint:
     name: ansible-lint
-  config_options:
-    defaults:
-      callback_plugins: /usr/lib/python2.7/site-packages/ara/plugins/callbacks
-  inventory:
-    group_vars:
-      all:
-        httpd_ignore_docker: no
-        mysql_ignore_docker: no
-        roundcubemail_ignore_docker: no
 scenario:
   name: ubuntu-devel
