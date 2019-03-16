@@ -13,8 +13,20 @@ This example is taken from `molecule/default/playbook.yml`:
 ---
 - name: Converge
   hosts: all
-  become: true
-  gather_facts: false
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - robertdebock.roundcubemail
+```
+
+The machine you are running this on, may need to be prepared. Tests have been done on machines prepared by this playbook:
+```yaml
+---
+- name: Prepare
+  hosts: all
+  become: yes
+  gather_facts: no
 
   vars:
     mysql_users:
@@ -45,7 +57,6 @@ This example is taken from `molecule/default/playbook.yml`:
     - robertdebock.httpd
     - robertdebock.php
     - robertdebock.mysql
-    - robertdebock.roundcubemail
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -71,14 +82,6 @@ roundcubemail_des_key: 964af56991531a805bd55085
 
 # The spellchecker to use. Either: 'google', 'pspell', 'enchant' or 'atd'.
 roundcubemail_spellcheck_engine: pspell
-
-# To update all packages installed by this roles, set `roundcubemail_package_state` to `latest`.
-roundcubemail_package_state: present
-
-# Some Docker containers do not allow managing services, rebooting and writing
-# to some locations in /etc. The role skips tasks that will typically fail in
-# Docker. With this parameter you can tell the role to -not- skip these tasks.
-roundcubemail_ignore_docker: yes
 ```
 
 Requirements
