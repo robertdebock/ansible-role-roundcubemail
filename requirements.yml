@@ -4,5 +4,6 @@
 - robertdebock.php
 - robertdebock.python_pip
 - robertdebock.buildtools
+- robertdebock.apt_autostart
 - robertdebock.mysql
 - robertdebock.httpd

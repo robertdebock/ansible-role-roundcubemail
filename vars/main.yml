@@ -2,7 +2,13 @@
 # vars file for roundcubemailmail
 roundcubemail_database_url: mysql://{{ roundcubemail_database_user }}:{{ roundcubemail_database_password }}@{{ roundcubemail_database_host }}/{{ roundcubemail_database_name }}
 
-roundcubemail_database_target: /usr/share/roundcubemail/SQL/mysql.initial.sql
+_roundcubemail_database_target:
+  default: /usr/share/roundcubemail/SQL/mysql.initial.sql
+  Debian: /usr/share/roundcube/SQL/mysql.initial.sql
+  Ubuntu: /usr/share/roundcube/SQL/mysql.initial.sql
+
+roundcubemail_database_target: "{{ _roundcubemail_database_target[ansible_distribution] | default(_roundcubemail_database_target['default']) }}"
+Ubuntu:
 
 _roundcubemail_packages:
   default:
@@ -24,11 +30,13 @@ _roundcubemail_requirements:
   Archlinux: []
   Debian:
     - php-mysql
+    - dbconfig-no-thanks
   Fedora:
     - php-mysqlnd
     - php-mcrypt
   Ubuntu:
     - php-mysql
+    - dbconfig-no-thanks
   openSUSE Leap:
     - php7-mcrypt
     - php7-mysql
