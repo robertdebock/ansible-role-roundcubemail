@@ -4,8 +4,8 @@ roundcubemail_database_url: mysql://{{ roundcubemail_database_user }}:{{ roundcu
 
 _roundcubemail_database_target:
   default: /usr/share/roundcubemail/SQL/mysql.initial.sql
-  Debian: /usr/share/roundcube/SQL/myql.initial.sql
-  Ubuntu: /usr/share/roundcube/SQL/myql.initial.sql
+  Debian: /usr/share/roundcube/SQL/mysql.initial.sql
+  Ubuntu: /usr/share/roundcube/SQL/mysql.initial.sql
 
 roundcubemail_database_target: "{{ _roundcubemail_database_target[ansible_distribution] | default(_roundcubemail_database_target['default']) }}"
 
@@ -29,11 +29,13 @@ _roundcubemail_requirements:
   Archlinux: []
   Debian:
     - php-mysql
+    - dbconfig-no-thanks
   Fedora:
     - php-mysqlnd
     - php-mcrypt
   Ubuntu:
     - php-mysql
+    - dbconfig-no-thanks
   openSUSE Leap:
     - php7-mcrypt
     - php7-mysql
