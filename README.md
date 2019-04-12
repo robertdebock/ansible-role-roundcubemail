@@ -72,8 +72,8 @@ These variables are set in `defaults/main.yml`:
 
 roundcubemail_database_host: localhost
 roundcubemail_database_user: roundcube
-roundcubemail_database_password: pass
-roundcubemail_database_name: roundcubemail
+roundcubemail_database_password: roundcube
+roundcubemail_database_name: roundcube
 
 # A URL to get support.
 roundcubemail_support_url: "{{ ansible_fqdn }}/support"
