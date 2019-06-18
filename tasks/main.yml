@@ -7,7 +7,7 @@
   notify:
     - restart httpd
   register: roundcubemail_install_requirements
-  until: roundcubemail_install_requirements
+  until: roundcubemail_install_requirements is succeeded
   retries: 3
 
 - name: install roundcubemail
@@ -15,7 +15,7 @@
     name: "{{ roundcubemail_packages }}"
     state: present
   register: roundcubemail_install_roundcubemail
-  until: roundcubemail_install_roundcubemail
+  until: roundcubemail_install_roundcubemail is succeeded
   retries: 3
   notify:
     - import mysql table layout
