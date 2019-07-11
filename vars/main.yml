@@ -37,7 +37,6 @@ _roundcubemail_requirements:
     - php-mysql
     - dbconfig-no-thanks
   openSUSE Leap:
-    - php7-mcrypt
     - php7-mysql
 
 roundcubemail_requirements: "{{ _roundcubemail_requirements[ansible_distribution] | default(_roundcubemail_requirements['default']) }}"
