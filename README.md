@@ -30,35 +30,37 @@ The machine you are running this on, may need to be prepared.
   become: yes
   gather_facts: no
 
-  vars:
-    mysql_users:
-      - name: roundcube
-        password: pass
-        priv: "roundcubemail.*:ALL"
-    mysql_databases:
-      - name: roundcubemail
-    php_settings:
-      upload_max_filesize:
-        section: PHP
-        value: 5M
-      post_max_size:
-        section: PHP
-        value: 6M
-      date.timezone:
-        section: Date
-        value: Europe/Amsterdam
-      extension:
-        section: PHP
-        value: mcrypt.so
-
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.epel
-    - robertdebock.buildtools
-    - robertdebock.python_pip
-    - robertdebock.httpd
-    - robertdebock.php
-    - robertdebock.mysql
+    - role: robertdebock.bootstrap
+    - role: robertdebock.epel
+    - role: robertdebock.buildtools
+    - role: robertdebock.python_pip
+    - role: robertdebock.httpd
+    - role: robertdebock.remi
+      remi_enabled_repositories:
+        - php73
+
+    - role: robertdebock.php
+      php_settings:
+        upload_max_filesize:
+          section: PHP
+          value: 5M
+        post_max_size:
+          section: PHP
+          value: 6M
+        date.timezone:
+          section: Date
+          value: Europe/Amsterdam
+        extension:
+          section: PHP
+          value: mcrypt.so
+    - role: robertdebock.mysql
+      mysql_users:
+        - name: roundcube
+          password: pass
+          priv: "roundcubemail.*:ALL"
+      mysql_databases:
+        - name: roundcubemail
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -103,6 +105,7 @@ The following roles can be installed to ensure all requirements are met, using `
 - robertdebock.buildtools
 - robertdebock.mysql
 - robertdebock.httpd
+- robertdebock.remi
 
 ```
 
