@@ -28,8 +28,17 @@ _roundcubemail_requirements:
     - php7-mcrypt
   Archlinux: []
   CentOS:
-    - php73-php-mysqlnd
-    - php73-php-mcrypt
+    - php-mcrypt
+    - php-cli
+    - php-gd
+    - php-curl
+    - php-xml
+    - php-mysql
+    - php-mbstring
+    - php-pspell
+    - php-imagick
+    # - php73-php-mysqlnd
+    # - php73-php-mcrypt
   Debian:
     - php-mysql
     - dbconfig-no-thanks

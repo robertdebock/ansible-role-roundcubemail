@@ -38,8 +38,7 @@ The machine you are running this on, may need to be prepared.
     - role: robertdebock.httpd
     - role: robertdebock.remi
       remi_enabled_repositories:
-        - php73
-
+        - php72
     - role: robertdebock.php
       php_settings:
         upload_max_filesize:
