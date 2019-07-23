@@ -38,7 +38,7 @@ The machine you are running this on, may need to be prepared.
     - role: robertdebock.httpd
     - role: robertdebock.remi
       remi_enabled_repositories:
-        - php72
+        - php73
     - role: robertdebock.php
       php_settings:
         upload_max_filesize:
@@ -54,12 +54,12 @@ The machine you are running this on, may need to be prepared.
           section: PHP
           value: mcrypt.so
     - role: robertdebock.mysql
+      mysql_databases:
+        - name: roundcube
       mysql_users:
         - name: roundcube
-          password: pass
-          priv: "roundcubemail.*:ALL"
-      mysql_databases:
-        - name: roundcubemail
+          password: roundcube
+          priv: "roundcube.*:ALL"
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -98,12 +98,12 @@ The following roles can be installed to ensure all requirements are met, using `
 ```yaml
 ---
 - robertdebock.bootstrap
+- robertdebock.buildtools
 - robertdebock.epel
+- robertdebock.httpd
+- robertdebock.mysql
 - robertdebock.php
 - robertdebock.python_pip
-- robertdebock.buildtools
-- robertdebock.mysql
-- robertdebock.httpd
 - robertdebock.remi
 
 ```

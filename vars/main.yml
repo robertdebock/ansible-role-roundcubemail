@@ -36,9 +36,7 @@ _roundcubemail_requirements:
     - php-mysql
     - php-mbstring
     - php-pspell
-    - php-imagick
-    # - php73-php-mysqlnd
-    # - php73-php-mcrypt
+    - php-pecl-imagick
   Debian:
     - php-mysql
     - dbconfig-no-thanks
