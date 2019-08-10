@@ -4,6 +4,7 @@ roundcubemail_database_url: mysql://{{ roundcubemail_database_user }}:{{ roundcu
 
 _roundcubemail_database_target:
   default: /usr/share/roundcubemail/SQL/mysql.initial.sql
+  Archlinux: /usr/share/webapps/roundcubemail/SQL/mysql.initial.sql
   Debian: /usr/share/roundcube/SQL/mysql.initial.sql
   Ubuntu: /usr/share/roundcube/SQL/mysql.initial.sql
 
@@ -11,6 +12,8 @@ roundcubemail_database_target: "{{ _roundcubemail_database_target[ansible_distri
 
 _roundcubemail_packages:
   default:
+    - roundcubemail
+  Archlinux:
     - roundcubemail
   Debian:
     - roundcube
@@ -26,7 +29,8 @@ _roundcubemail_requirements:
   Alpine:
     - php7-mysqli
     - php7-mcrypt
-  Archlinux: []
+  Archlinux:
+    - php-gd
   CentOS:
     - php-mcrypt
     - php-cli
@@ -61,7 +65,7 @@ roundcubemail_conf_dir: "{{ _roundcubemail_conf_dir[ansible_distribution] | defa
 
 roundcubemail_file: config.inc.php
 
-roundcubemail_owner: root
+roundcubemail_owner: http
 
 _roundcubemail_group:
   default: apache
@@ -84,6 +88,7 @@ roundcubemail_mode: "{{ _roundcubemail_mode[ansible_distribution] | default(_rou
 _roundcubemail_httpd_configuration:
   default: /etc/httpd/conf.d/roundcube.conf
   Alpine: /etc/apache2/conf.d/roundcube.conf
+  Archlinux: /etc/httpd/conf/extra/roundcube.conf
   Debian: /etc/apache2/conf-enabled/roundcube.conf
   Ubuntu: /etc/apache2/conf-enabled/roundcube.conf
   openSUSE Leap: /etc/apache2/conf.d/roundcube.conf
