@@ -69,7 +69,9 @@ _roundcubemail_owner:
   default: http
   Alpine: apache
   Archlinux: root
+  CentOS: apache
   Debian: www-data
+  Fedora: apache
   openSUSE Leap: root
   Ubuntu: www-data
 
@@ -79,7 +81,9 @@ _roundcubemail_group:
   default: apache
   Alpine: root
   Archlinux: root
+  CentOS: apache
   Debian: www-data
+  Fedora: apache
   openSUSE Leap: root
   Ubuntu: www-data
 
