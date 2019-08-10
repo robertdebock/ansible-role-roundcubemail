@@ -70,7 +70,7 @@ roundcubemail_owner: http
 _roundcubemail_group:
   default: apache
   Alpine: root
-  Archlinux: http
+  Archlinux: root
   Debian: www-data
   Ubuntu: www-data
   openSUSE Leap: root
