@@ -65,15 +65,23 @@ roundcubemail_conf_dir: "{{ _roundcubemail_conf_dir[ansible_distribution] | defa
 
 roundcubemail_file: config.inc.php
 
-roundcubemail_owner: http
+_roundcubemail_owner:
+  default: http
+  Alpine: apache
+  Archlinux: root
+  Debian: www-data
+  openSUSE Leap: root
+  Ubuntu: www-data
+
+roundcubemail_owner: "{{ _roundcubemail_owner[ansible_distribution] | default(_roundcubemail_owner['default']) }}"
 
 _roundcubemail_group:
   default: apache
   Alpine: root
   Archlinux: root
   Debian: www-data
-  Ubuntu: www-data
   openSUSE Leap: root
+  Ubuntu: www-data
 
 roundcubemail_group: "{{ _roundcubemail_group[ansible_distribution] | default(_roundcubemail_group['default']) }}"
 
