@@ -19,3 +19,10 @@
 
 - name: load roundcubemail selinux pp
   command: semodule -i /etc/my-roundcubemail.pp
+
+- name: restart httpd
+  systemd:
+    name: httpd
+    enabled: yes
+    state: restarted
+  become: yes
