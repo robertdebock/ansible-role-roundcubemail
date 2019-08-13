@@ -34,3 +34,4 @@
         - name: roundcube
           password: roundcube
           priv: "roundcube.*:ALL"
+    - role: robertdebock.selinux
