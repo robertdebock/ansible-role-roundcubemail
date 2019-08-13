@@ -48,7 +48,7 @@
 
 - name: configure httpd
   template:
-    src: roundcube.conf.j2
+    src: roundcubemail.conf.j2
     dest: "{{ roundcubemail_httpd_configuration }}"
   notify:
     - restart httpd
