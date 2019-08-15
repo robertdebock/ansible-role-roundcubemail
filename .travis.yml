@@ -50,7 +50,7 @@ matrix:
     - env: version="" distro="alpine-edge"
     - env: version="devel" distro="alpine-edge"
     - env: version="devel" distro="alpine-latest"
-    - env: version="devel" distro="archlinux" expectation="fail"
+    - env: version="devel" distro="archlinux"
     - env: version="devel" distro="centos-6" expectation="fail"
     - env: version="devel" distro="centos-latest"
     - env: version="devel" distro="debian-stable"
