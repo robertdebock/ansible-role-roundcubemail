@@ -129,7 +129,7 @@ This role has been tested against the following distributions and Ansible versio
 |------------|-----------|-----------|-------------|
 |alpine-edge*|yes|yes|yes*|
 |alpine-latest|yes|yes|yes*|
-|archlinux|yes|yes|yes*|
+|archlinux|no|yes|yes*|
 |centos-6|no|no|no*|
 |centos-latest|yes|yes|yes*|
 |debian-stable|yes|yes|yes*|
@@ -142,6 +142,18 @@ This role has been tested against the following distributions and Ansible versio
 |ubuntu-rolling|yes|yes|yes*|
 
 A single star means the build may fail, it's marked as an experimental build.
+
+Exceptions
+----------
+
+Some variarations of the build matrix do not work. These are the variations and reasons why the build won't work:
+
+| variation                 | reason                 |
+|---------------------------|------------------------|
+| Ansible 2.7 on Archlinux | New-style module did not handle its own exit |
+| CentOS 6 | Depends on robertdebock.python_pip which does not work on CentOS 6 |
+
+
 
 Testing
 -------

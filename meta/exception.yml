@@ -1,0 +1,6 @@
+---
+exceptions:
+  - variation: Ansible 2.7 on Archlinux
+    reason: New-style module did not handle its own exit
+  - variation: CentOS 6
+    reason: Depends on robertdebock.python_pip which does not work on CentOS 6
