@@ -111,6 +111,16 @@ The following roles can be installed to ensure all requirements are met, using `
 
 ```
 
+This role uses the following modules:
+```yaml
+---
+- command
+- file
+- mysql_db
+- package
+- template
+```
+
 Context
 -------
 
