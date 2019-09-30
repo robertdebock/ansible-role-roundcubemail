@@ -6,9 +6,8 @@ _roundcubemail_database_target:
   default: /usr/share/roundcubemail/SQL/mysql.initial.sql
   Archlinux: /usr/share/webapps/roundcubemail/SQL/mysql.initial.sql
   Debian: /usr/share/roundcube/SQL/mysql.initial.sql
-  Ubuntu: /usr/share/roundcube/SQL/mysql.initial.sql
 
-roundcubemail_database_target: "{{ _roundcubemail_database_target[ansible_distribution] | default(_roundcubemail_database_target['default']) }}"
+roundcubemail_database_target: "{{ _roundcubemail_database_target[ansible_os_family] | default(_roundcubemail_database_target['default']) }}"
 
 _roundcubemail_packages:
   default:
@@ -17,10 +16,8 @@ _roundcubemail_packages:
     - roundcubemail
   Debian:
     - roundcube
-  Ubuntu:
-    - roundcube
 
-roundcubemail_packages: "{{ _roundcubemail_packages[ansible_distribution] | default(_roundcubemail_packages['default']) }}"
+roundcubemail_packages: "{{ _roundcubemail_packages[ansible_os_family] | default(_roundcubemail_packages['default']) }}"
 
 _roundcubemail_requirements:
   default:
@@ -52,6 +49,16 @@ _roundcubemail_requirements:
     - dbconfig-no-thanks
   openSUSE Leap:
     - php7-mysql
+  RedHat:
+    - php-mcrypt
+    - php-cli
+    - php-gd
+    - php-curl
+    - php-xml
+    - php-mysql
+    - php-mbstring
+    - php-pspell
+    - php-pecl-imagick
 
 roundcubemail_requirements: "{{ _roundcubemail_requirements[ansible_distribution] | default(_roundcubemail_requirements['default']) }}"
 
@@ -59,9 +66,8 @@ _roundcubemail_conf_dir:
   default: /etc/roundcubemail
   Archlinux: /etc/webapps/roundcubemail/config
   Debian: /etc/roundcube
-  Ubuntu: /etc/roundcube
 
-roundcubemail_conf_dir: "{{ _roundcubemail_conf_dir[ansible_distribution] | default(_roundcubemail_conf_dir['default']) }}"
+roundcubemail_conf_dir: "{{ _roundcubemail_conf_dir[ansible_os_family] | default(_roundcubemail_conf_dir['default']) }}"
 
 roundcubemail_file: config.inc.php
 
@@ -69,40 +75,35 @@ _roundcubemail_owner:
   default: http
   Alpine: apache
   Archlinux: root
-  CentOS: apache
   Debian: www-data
-  Fedora: apache
-  openSUSE Leap: root
-  Ubuntu: www-data
+  RedHat: apache
+  Suse: root
 
-roundcubemail_owner: "{{ _roundcubemail_owner[ansible_distribution] | default(_roundcubemail_owner['default']) }}"
+roundcubemail_owner: "{{ _roundcubemail_owner[ansible_os_family] | default(_roundcubemail_owner['default']) }}"
 
 _roundcubemail_group:
   default: apache
   Alpine: root
   Archlinux: root
-  CentOS: apache
   Debian: www-data
-  Fedora: apache
-  openSUSE Leap: root
-  Ubuntu: www-data
+  RedHat: apache
+  Suse: root
 
-roundcubemail_group: "{{ _roundcubemail_group[ansible_distribution] | default(_roundcubemail_group['default']) }}"
+roundcubemail_group: "{{ _roundcubemail_group[ansible_os_family] | default(_roundcubemail_group['default']) }}"
 
 _roundcubemail_mode:
   default: "0640"
   Alpine: "0644"
   Archlinux: "0644"
-  openSUSE Leap: "0644"
+  Suse: "0644"
 
-roundcubemail_mode: "{{ _roundcubemail_mode[ansible_distribution] | default(_roundcubemail_mode['default']) }}"
+roundcubemail_mode: "{{ _roundcubemail_mode[ansible_os_family] | default(_roundcubemail_mode['default']) }}"
 
 _roundcubemail_httpd_configuration:
   default: /etc/httpd/conf.d/roundcube.conf
   Alpine: /etc/apache2/conf.d/roundcube.conf
   Archlinux: /etc/httpd/conf/extra/roundcube.conf
   Debian: /etc/apache2/conf-enabled/roundcube.conf
-  Ubuntu: /etc/apache2/conf-enabled/roundcube.conf
-  openSUSE Leap: /etc/apache2/conf.d/roundcube.conf
+  Suse: /etc/apache2/conf.d/roundcube.conf
 
-roundcubemail_httpd_configuration: "{{ _roundcubemail_httpd_configuration[ansible_distribution] | default(_roundcubemail_httpd_configuration['default']) }}"
+roundcubemail_httpd_configuration: "{{ _roundcubemail_httpd_configuration[ansible_os_family] | default(_roundcubemail_httpd_configuration['default']) }}"
