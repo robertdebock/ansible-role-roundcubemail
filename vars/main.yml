@@ -28,7 +28,12 @@ _roundcubemail_requirements:
     - php7-mcrypt
   Archlinux:
     - php-gd
-  CentOS:
+  Debian:
+    - php-mysql
+    - dbconfig-no-thanks
+  Suse:
+    - php7-mysql
+  RedHat-7:
     - php-mcrypt
     - php-cli
     - php-gd
@@ -38,17 +43,6 @@ _roundcubemail_requirements:
     - php-mbstring
     - php-pspell
     - php-pecl-imagick
-  Debian:
-    - php-mysql
-    - dbconfig-no-thanks
-  Fedora:
-    - php-mysqlnd
-    - php-mcrypt
-  Ubuntu:
-    - php-mysql
-    - dbconfig-no-thanks
-  openSUSE Leap:
-    - php7-mysql
   RedHat:
     - php-mcrypt
     - php-cli
@@ -60,7 +54,7 @@ _roundcubemail_requirements:
     - php-pspell
     - php-pecl-imagick
 
-roundcubemail_requirements: "{{ _roundcubemail_requirements[ansible_distribution] | default(_roundcubemail_requirements['default']) }}"
+roundcubemail_requirements: "{{ _roundcubemail_requirements[ansible_os_family] | default(_roundcubemail_requirements[ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default(_roundcubemail_requirements['default'])) }}"
 
 _roundcubemail_conf_dir:
   default: /etc/roundcubemail
