@@ -8,57 +8,18 @@ lint:
 driver:
   name: docker
 platforms:
-  - name: roundcubemail-alpine-edge
-    image: alpine:edge
-    pre_build_image: yes
-    command: sh -c "while true ; do sleep 1 ; done"
-  - name: roundcubemail-alpine-latest
-    image: alpine:latest
-    pre_build_image: yes
-    command: sh -c "while true ; do sleep 1 ; done"
-  - name: roundcubemail-archlinux
-    image: archlinux/base
-    pre_build_image: yes
-  - name: roundcubemail-centos-6
-    image: centos:6
-    pre_build_image: yes
-  - name: roundcubemail-centos-latest
-    image: centos:latest
-    pre_build_image: yes
-  - name: roundcubemail-debian-stable
-    image: debian:stable
-    pre_build_image: yes
-  - name: roundcubemail-debian-unstable
-    image: debian:unstable
-    pre_build_image: yes
-  - name: roundcubemail-fedora-latest
-    image: fedora:latest
-    pre_build_image: yes
-  - name: roundcubemail-fedora-rawhide
-    image: fedora:rawhide
-    pre_build_image: yes
-  - name: roundcubemail-opensuse-leap
-    image: opensuse/leap
-    pre_build_image: yes
-  - name: roundcubemail-ubuntu-latest
-    image: ubuntu:latest
-    pre_build_image: yes
-  - name: roundcubemail-ubuntu-rolling
-    image: ubuntu:rolling
-    pre_build_image: yes
-  - name: roundcubemail-ubuntu-devel
-    image: ubuntu:devel
+  - name: "instance-${TOX_ENVNAME:-default}"
+    image: "${distribution:-robertdebock/docker-fedora-systemd:latest}"
+    command: sh -c "while true ; do sleep 30 ; done"
     pre_build_image: yes
 provisioner:
   name: ansible
   playbooks:
-    prepare: ../resources/prepare.yml
-    converge: ../resources/playbook.yml
+    prepare: prepare.yml
+    converge: playbook.yml
   inventory:
-    host_vars:
-      roundcubemail-fedora-latest:
-        ansible_python_interpreter: /usr/bin/python3
-      roundcubemail-fedora-rawhide:
+    group_vars:
+      all:
         ansible_python_interpreter: /usr/bin/python3
 scenario:
   name: default
