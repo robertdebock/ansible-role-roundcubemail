@@ -35,7 +35,6 @@ galaxy_info:
   galaxy_tags:
     - roundcubemail
     - centos
-    - debian
     - fedora
     - rhel
     - ubuntu
