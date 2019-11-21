@@ -36,7 +36,6 @@ galaxy_info:
     - roundcubemail
     - centos
     - rhel
-    - ubuntu
 
 dependencies:
   - robertdebock.httpd
