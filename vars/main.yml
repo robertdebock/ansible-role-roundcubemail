@@ -1,24 +1,5 @@
 ---
 # vars file for roundcubemailmail
-roundcubemail_database_url: mysql://{{ roundcubemail_database_user }}:{{ roundcubemail_database_password }}@{{ roundcubemail_database_host }}/{{ roundcubemail_database_name }}
-
-_roundcubemail_database_target:
-  default: /usr/share/roundcubemail/SQL/mysql.initial.sql
-  Archlinux: /usr/share/webapps/roundcubemail/SQL/mysql.initial.sql
-  Debian: /usr/share/roundcube/SQL/mysql.initial.sql
-
-roundcubemail_database_target: "{{ _roundcubemail_database_target[ansible_os_family] | default(_roundcubemail_database_target['default']) }}"
-
-_roundcubemail_packages:
-  default:
-    - roundcubemail
-  Archlinux:
-    - roundcubemail
-  Debian:
-    - roundcube
-
-roundcubemail_packages: "{{ _roundcubemail_packages[ansible_os_family] | default(_roundcubemail_packages['default']) }}"
-
 _roundcubemail_requirements:
   default:
     - php-mysql
@@ -44,17 +25,24 @@ _roundcubemail_requirements:
     - php-pspell
     - php-pecl-imagick
   RedHat:
-    - php-mcrypt
     - php-cli
     - php-gd
     - php-curl
     - php-xml
-    - php-mysql
+    - php-mysqlnd
     - php-mbstring
-    - php-pspell
-    - php-pecl-imagick
 
 roundcubemail_requirements: "{{ _roundcubemail_requirements[ansible_os_family] | default(_roundcubemail_requirements[ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default(_roundcubemail_requirements['default'])) }}"
+
+_roundcubemail_packages:
+  default:
+    - roundcubemail
+  Archlinux:
+    - roundcubemail
+  Debian:
+    - roundcube
+
+roundcubemail_packages: "{{ _roundcubemail_packages[ansible_os_family] | default(_roundcubemail_packages['default']) }}"
 
 _roundcubemail_conf_dir:
   default: /etc/roundcubemail
@@ -62,8 +50,6 @@ _roundcubemail_conf_dir:
   Debian: /etc/roundcube
 
 roundcubemail_conf_dir: "{{ _roundcubemail_conf_dir[ansible_os_family] | default(_roundcubemail_conf_dir['default']) }}"
-
-roundcubemail_file: config.inc.php
 
 _roundcubemail_owner:
   default: http
@@ -92,6 +78,17 @@ _roundcubemail_mode:
   Suse: "0644"
 
 roundcubemail_mode: "{{ _roundcubemail_mode[ansible_os_family] | default(_roundcubemail_mode['default']) }}"
+
+roundcubemail_database_url: mysql://{{ roundcubemail_database_user }}:{{ roundcubemail_database_password }}@{{ roundcubemail_database_host }}/{{ roundcubemail_database_name }}
+
+_roundcubemail_database_target:
+  default: /usr/share/roundcubemail/SQL/mysql.initial.sql
+  Archlinux: /usr/share/webapps/roundcubemail/SQL/mysql.initial.sql
+  Debian: /usr/share/roundcube/SQL/mysql.initial.sql
+
+roundcubemail_database_target: "{{ _roundcubemail_database_target[ansible_os_family] | default(_roundcubemail_database_target['default']) }}"
+
+roundcubemail_file: config.inc.php
 
 _roundcubemail_httpd_configuration:
   default: /etc/httpd/conf.d/roundcube.conf

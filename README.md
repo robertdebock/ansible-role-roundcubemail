@@ -134,7 +134,7 @@ This role has been tested on these [container images](https://hub.docker.com/):
 |alpine|edge|yes|
 |debian|unstable|yes|
 |debian|latest|no|
-|centos|latest|no|
+|centos|7|no|
 |fedora|latest|no|
 |fedora|rawhide|yes|
 |opensuse|latest|no|
@@ -153,7 +153,7 @@ Some variarations of the build matrix do not work. These are the variations and 
 
 | variation                 | reason                 |
 |---------------------------|------------------------|
-| archlinux/base | New-style module did not handle its own exit |
+| centos:8 | no package roundcubemail. |
 
 
 Testing
