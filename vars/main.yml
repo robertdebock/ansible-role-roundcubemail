@@ -95,6 +95,7 @@ _roundcubemail_httpd_configuration:
   Alpine: /etc/apache2/conf.d/roundcube.conf
   Archlinux: /etc/httpd/conf/extra/roundcube.conf
   Debian: /etc/apache2/conf-enabled/roundcube.conf
+  RedHat: /etc/httpd/conf.d/roundcubemail.conf
   Suse: /etc/apache2/conf.d/roundcube.conf
 
 roundcubemail_httpd_configuration: "{{ _roundcubemail_httpd_configuration[ansible_os_family] | default(_roundcubemail_httpd_configuration['default']) }}"
