@@ -10,9 +10,6 @@
     - role: robertdebock.buildtools
     - role: robertdebock.python_pip
     - role: robertdebock.httpd
-    - role: robertdebock.remi
-      remi_enabled_repositories:
-        - php73
     - role: robertdebock.php
       php_settings:
         upload_max_filesize:

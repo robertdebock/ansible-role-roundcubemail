@@ -4,6 +4,8 @@ roundcubemail
 <img src="https://docs.ansible.com/ansible-tower/3.2.4/html_ja/installandreference/_static/images/logo_invert.png" width="10%" height="10%" alt="Ansible logo" align="right"/>
 <a href="https://travis-ci.org/robertdebock/ansible-role-roundcubemail"> <img src="https://travis-ci.org/robertdebock/ansible-role-roundcubemail.svg?branch=master" alt="Build status"/></a> <img src="https://img.shields.io/ansible/role/d/24815"/> <img src="https://img.shields.io/ansible/quality/24815"/>
 
+<a href="https://github.com/robertdebock/ansible-role-roundcubemail/actions"><img src="https://github.com/robertdebock/ansible-role-roundcubemail/workflows/GitHub%20Action/badge.svg"/></a>
+
 Install and configure roundcubemail on your system.
 
 Example Playbook
@@ -36,9 +38,6 @@ The machine you are running this on, may need to be prepared, I use this playboo
     - role: robertdebock.buildtools
     - role: robertdebock.python_pip
     - role: robertdebock.httpd
-    - role: robertdebock.remi
-      remi_enabled_repositories:
-        - php73
     - role: robertdebock.php
       php_settings:
         upload_max_filesize:
@@ -107,7 +106,6 @@ The following roles can be installed to ensure all requirements are met, using `
 - robertdebock.php
 - robertdebock.python_pip
 - robertdebock.reboot
-- robertdebock.remi
 - robertdebock.selinux
 
 ```
