@@ -7,8 +7,6 @@ _roundcubemail_requirements:
   Alpine:
     - php7-mysqli
     - php7-mcrypt
-  Archlinux:
-    - php-gd
   Debian:
     - php-mysql
     - dbconfig-no-thanks
@@ -37,8 +35,6 @@ roundcubemail_requirements: "{{ _roundcubemail_requirements[ansible_os_family] |
 _roundcubemail_packages:
   default:
     - roundcubemail
-  Archlinux:
-    - roundcubemail
   Debian:
     - roundcube
 
@@ -46,7 +42,6 @@ roundcubemail_packages: "{{ _roundcubemail_packages[ansible_os_family] | default
 
 _roundcubemail_conf_dir:
   default: /etc/roundcubemail
-  Archlinux: /etc/webapps/roundcubemail/config
   Debian: /etc/roundcube
 
 roundcubemail_conf_dir: "{{ _roundcubemail_conf_dir[ansible_os_family] | default(_roundcubemail_conf_dir['default']) }}"
@@ -54,7 +49,6 @@ roundcubemail_conf_dir: "{{ _roundcubemail_conf_dir[ansible_os_family] | default
 _roundcubemail_owner:
   default: http
   Alpine: apache
-  Archlinux: root
   Debian: www-data
   RedHat: apache
   Suse: root
@@ -64,7 +58,6 @@ roundcubemail_owner: "{{ _roundcubemail_owner[ansible_os_family] | default(_roun
 _roundcubemail_group:
   default: apache
   Alpine: root
-  Archlinux: root
   Debian: www-data
   RedHat: apache
   Suse: root
@@ -74,7 +67,6 @@ roundcubemail_group: "{{ _roundcubemail_group[ansible_os_family] | default(_roun
 _roundcubemail_mode:
   default: "0640"
   Alpine: "0644"
-  Archlinux: "0644"
   Suse: "0644"
 
 roundcubemail_mode: "{{ _roundcubemail_mode[ansible_os_family] | default(_roundcubemail_mode['default']) }}"
@@ -83,7 +75,6 @@ roundcubemail_database_url: mysql://{{ roundcubemail_database_user }}:{{ roundcu
 
 _roundcubemail_database_target:
   default: /usr/share/roundcubemail/SQL/mysql.initial.sql
-  Archlinux: /usr/share/webapps/roundcubemail/SQL/mysql.initial.sql
   Debian: /usr/share/roundcube/SQL/mysql.initial.sql
 
 roundcubemail_database_target: "{{ _roundcubemail_database_target[ansible_os_family] | default(_roundcubemail_database_target['default']) }}"
@@ -93,7 +84,6 @@ roundcubemail_file: config.inc.php
 _roundcubemail_httpd_configuration:
   default: /etc/httpd/conf.d/roundcube.conf
   Alpine: /etc/apache2/conf.d/roundcube.conf
-  Archlinux: /etc/httpd/conf/extra/roundcube.conf
   Debian: /etc/apache2/conf-enabled/roundcube.conf
   RedHat: /etc/httpd/conf.d/roundcubemail.conf
   Suse: /etc/apache2/conf.d/roundcubemail.conf
