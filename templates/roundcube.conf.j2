@@ -37,10 +37,16 @@ Alias /roundcubemail /usr/share/roundcubemail
 
 # Those directories should not be viewed by Web clients.
 <Directory /usr/share/roundcubemail/bin/>
-    Order Allow,Deny
-    Deny from all
+    <IfModule !mod_authz_core.c>
+        # Apache 2.2
+        Order Allow,Deny
+        Deny from all
+    </IfModule>
 </Directory>
 <Directory /usr/share/roundcubemail/plugins/enigma/home/>
-    Order Allow,Deny
-    Deny from all
+    <IfModule !mod_authz_core.c>
+        # Apache 2.2
+        Order Allow,Deny
+        Deny from all
+    </IfModule>
 </Directory>
