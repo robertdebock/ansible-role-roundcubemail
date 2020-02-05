@@ -49,7 +49,7 @@
         name: "{{ item }}"
         state: yes
         persistent: yes
-      with_items:
+      loop:
         - httpd_setrlimit
         - daemons_enable_cluster_mode
   when:
