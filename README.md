@@ -17,8 +17,8 @@ This example is taken from `molecule/resources/converge.yml` and is tested on ea
   gather_facts: yes
 
   roles:
-    - robertdebock.httpd
-    - robertdebock.roundcubemail
+    - role: robertdebock.httpd
+    - role: robertdebock.roundcubemail
 ```
 
 The machine may need to be prepared using `molecule/resources/prepare.yml`:
