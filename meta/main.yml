@@ -1,4 +1,3 @@
----
 galaxy_info:
   author: Robert de Bock
   role_name: roundcubemail
@@ -6,28 +5,21 @@ galaxy_info:
   license: Apache-2.0
   company: none
   min_ansible_version: 2.8
-  min_ansible_container_version: 0.2.0
 
   platforms:
-    - name: Debian
-      versions:
-        - buster
     - name: EL
       versions:
         - 7
     - name: Fedora
       versions:
-        - all
+        - 31
+        - 32
     - name: OpenSUSE
       versions:
         - all
-    - name: Ubuntu
-      versions:
-        - bionic
 
   galaxy_tags:
     - roundcubemail
     - centos
 
-dependencies:
-  - robertdebock.httpd
+dependencies:   - robertdebock.httpd
