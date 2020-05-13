@@ -22,4 +22,5 @@ galaxy_info:
     - roundcubemail
     - centos
 
-dependencies:   - robertdebock.httpd
+dependencies:
+  - robertdebock.httpd
