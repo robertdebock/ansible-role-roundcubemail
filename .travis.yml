@@ -14,13 +14,10 @@ env:
   global:
     namespace="robertdebock"
   matrix:
-    - image="debian" tag="latest"
     - image="centos" tag="7"
     - image="fedora" tag="31"
     - image="fedora" tag="latest"
-    - image="fedora" tag="rawhide"
     - image="opensuse" tag="latest"
-    - image="ubuntu" tag="1804"
 
 cache:
   - pip
