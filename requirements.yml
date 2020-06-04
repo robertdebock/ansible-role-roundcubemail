@@ -4,6 +4,7 @@
 - robertdebock.epel
 - robertdebock.httpd
 - robertdebock.mysql
+- robertdebock.openssl
 - robertdebock.php
 - robertdebock.python_pip
 - robertdebock.reboot

@@ -9,6 +9,10 @@
     - role: robertdebock.epel
     - role: robertdebock.buildtools
     - role: robertdebock.python_pip
+    - role: robertdebock.openssl
+      openssl_items:
+        - name: apache-httpd
+          common_name: "{{ ansible_fqdn }}"
     - role: robertdebock.httpd
     - role: robertdebock.php
       php_settings:
