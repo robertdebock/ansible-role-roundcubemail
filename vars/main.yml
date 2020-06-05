@@ -65,9 +65,9 @@ _roundcubemail_group:
 roundcubemail_group: "{{ _roundcubemail_group[ansible_os_family] | default(_roundcubemail_group['default']) }}"
 
 _roundcubemail_mode:
-  default: "0640"
-  Alpine: "0644"
-  Suse: "0644"
+  default: "640"
+  Alpine: "644"
+  Suse: "644"
 
 roundcubemail_mode: "{{ _roundcubemail_mode[ansible_os_family] | default(_roundcubemail_mode['default']) }}"
 
