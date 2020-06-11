@@ -113,6 +113,8 @@ The following roles can be installed to ensure all requirements are met, using `
 - robertdebock.buildtools
 - robertdebock.epel
 - robertdebock.httpd
+# If you have your database hosted on another instance, you don't need this
+# role.
 - robertdebock.mysql
 - robertdebock.openssl
 - robertdebock.php

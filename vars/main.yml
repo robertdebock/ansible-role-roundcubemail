@@ -4,14 +4,22 @@ _roundcubemail_requirements:
   default:
     - php-mysql
     - php-mcrypt
+    - python2-mysql
   Alpine:
     - php7-mysqli
     - php7-mcrypt
+    - py-mysqldb
+  Amazon-2018:
+    - MySQL-python27
+  Amazon:
+    - MySQL-python
   Debian:
     - php-mysql
     - dbconfig-no-thanks
+    - python3-mysqldb
   Suse:
     - php7-mysql
+    - python-MySQL-python
   RedHat-7:
     - php-mcrypt
     - php-cli
@@ -22,6 +30,7 @@ _roundcubemail_requirements:
     - php-mbstring
     - php-pspell
     - php-pecl-imagick
+    - MySQL-python
   RedHat:
     - php-cli
     - php-gd
@@ -29,6 +38,7 @@ _roundcubemail_requirements:
     - php-xml
     - php-mysqlnd
     - php-mbstring
+    - python3-PyMySQL
 
 roundcubemail_requirements: "{{ _roundcubemail_requirements[ansible_os_family] | default(_roundcubemail_requirements[ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default(_roundcubemail_requirements['default'])) }}"
 
