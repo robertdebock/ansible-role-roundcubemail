@@ -4,36 +4,42 @@
     that:
       - roundcubemail_database_host is defined
       - roundcubemail_database_host | length > 0
+    quiet: yes
 
 - name: test if roundcubemail_database_user is set correctly
   assert:
     that:
       - roundcubemail_database_user is defined
       - roundcubemail_database_user | length > 0
+    quiet: yes
 
 - name: test if roundcubemail_database_password is set correctly
   assert:
     that:
       - roundcubemail_database_password is defined
       - roundcubemail_database_password | length > 0
+    quiet: yes
 
 - name: test if roundcubemail_database_name is set correctly
   assert:
     that:
       - roundcubemail_database_name is defined
       - roundcubemail_database_name | length > 0
+    quiet: yes
 
 - name: test if roundcubemail_support_url is set correctly
   assert:
     that:
       - roundcubemail_support_url is defined
       - roundcubemail_support_url | length > 0
+    quiet: yes
 
 - name: test if roundcubemail_des_key is set correctly
   assert:
     that:
       - roundcubemail_des_key is defined
       - roundcubemail_des_key | length > 0
+    quiet: yes
 
 - name: test if roundcubemail_spellcheck_engine is set correctly
   assert:
@@ -41,3 +47,4 @@
       - roundcubemail_spellcheck_engine is defined
       - roundcubemail_spellcheck_engine | length > 0
       - roundcubemail_spellcheck_engine in ["atd", "enchant", "google", "pspell"]
+    quiet: yes
