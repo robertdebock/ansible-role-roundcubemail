@@ -21,6 +21,7 @@
   file:
     path: "{{ roundcubemail_conf_dir }}"
     state: directory
+    mode: "0755"
 
 - name: configure roundcubemail
   template:
@@ -36,6 +37,7 @@
       copy:
         src: my-roundcubemail.te
         dest: /etc/my-roundcubemail.te
+        mode: "0644"
       notify:
         - create roundcubemail selinux mod
         - create roundcubemail selinux pp
@@ -57,5 +59,6 @@
   template:
     src: roundcube.conf.j2
     dest: "{{ roundcubemail_httpd_configuration }}"
+    mode: "0644"
   notify:
     - restart httpd
