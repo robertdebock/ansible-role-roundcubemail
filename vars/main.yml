@@ -20,7 +20,7 @@ _roundcubemail_requirements:
     - python3-mysqldb
   Suse:
     - php7-mysql
-    - python-MySQL-python
+    - python3-mysqlclient
   RedHat-7:
     - php-mcrypt
     - php-cli
