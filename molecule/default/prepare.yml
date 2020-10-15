@@ -15,19 +15,11 @@
           common_name: "{{ ansible_fqdn }}"
     - role: robertdebock.httpd
     - role: robertdebock.php
-      php_settings:
-        upload_max_filesize:
-          section: PHP
-          value: 5M
-        post_max_size:
-          section: PHP
-          value: 6M
-        date.timezone:
-          section: Date
-          value: Europe/Amsterdam
-        extension:
-          section: PHP
-          value: mcrypt.so
+      php_upload_max_filesize: 5M
+      php_post_max_size: 6M
+      php_date_timezone: Europe/Amsterdam
+      php_extension:
+        - mcrypt.so
     - role: robertdebock.mysql
       mysql_databases:
         - name: roundcube
