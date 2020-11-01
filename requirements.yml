@@ -1,13 +1,14 @@
 ---
-- robertdebock.bootstrap
-- robertdebock.buildtools
-- robertdebock.epel
-- robertdebock.httpd
+roles:
+  - name: robertdebock.bootstrap
+  - name: robertdebock.buildtools
+  - name: robertdebock.epel
+  - name: robertdebock.httpd
 # If you have your database hosted on another instance, you don't need this
 # role.
-- robertdebock.mysql
-- robertdebock.openssl
-- robertdebock.php
-- robertdebock.python_pip
-- robertdebock.reboot
-- robertdebock.selinux
+  - name: robertdebock.mysql
+  - name: robertdebock.openssl
+  - name: robertdebock.php
+  - name: robertdebock.python_pip
+  - name: robertdebock.reboot
+  - name: robertdebock.selinux
