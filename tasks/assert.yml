@@ -46,5 +46,5 @@
     that:
       - roundcubemail_spellcheck_engine is defined
       - roundcubemail_spellcheck_engine | length > 0
-      - roundcubemail_spellcheck_engine in ["atd", "enchant", "google", "pspell"]
+      - roundcubemail_spellcheck_engine in [ "atd", "enchant", "google", "pspell" ]
     quiet: yes
