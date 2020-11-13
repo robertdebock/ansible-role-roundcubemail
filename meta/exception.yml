@@ -2,3 +2,5 @@
 exceptions:
   - variation: centos:8
     reason: "No package roundcubemail available."
+  - variation: amazonlinux:1
+    reason: "No package matching 'python3-pip' found available, installed or updated"
