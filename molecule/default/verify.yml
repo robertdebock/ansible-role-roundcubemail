@@ -12,4 +12,4 @@
         validate_certs: no
       register: roundcubemail_access_the_webinterface
       failed_when:
-        - "'Roundcube Webmail Login' not in roundcubemail_access_the_webinterface.content"
+        - "'Roundcube Webmail' not in roundcubemail_access_the_webinterface.content"
