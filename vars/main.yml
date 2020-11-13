@@ -82,14 +82,16 @@ _roundcubemail_mode:
 
 roundcubemail_mode: "{{ _roundcubemail_mode[ansible_os_family] | default(_roundcubemail_mode['default']) }}"
 
+_roundcubemail_install_directory:
+  default: /usr/share/roundcubemail
+  Debian: /usr/share/roundcube
+  Suse: /usr/share/doc/packages/roundcubemail
+
+roundcubemail_install_directory: "{{ _roundcubemail_install_directory[ansible_os_family] | default(_roundcubemail_install_directory['default']) }}"
+
 roundcubemail_database_url: mysql://{{ roundcubemail_database_user }}:{{ roundcubemail_database_password }}@{{ roundcubemail_database_host }}/{{ roundcubemail_database_name }}
 
-_roundcubemail_database_target:
-  default: /usr/share/roundcubemail/SQL/mysql.initial.sql
-  Debian: /usr/share/roundcube/SQL/mysql.initial.sql
-  Suse: /usr/share/doc/packages/roundcubemail/SQL/mysql.initial.sql
-
-roundcubemail_database_target: "{{ _roundcubemail_database_target[ansible_os_family] | default(_roundcubemail_database_target['default']) }}"
+roundcubemail_database_target: "{{ roundcubemail_install_directory }}/SQL/mysql.initial.sql"
 
 roundcubemail_file: config.inc.php
 
