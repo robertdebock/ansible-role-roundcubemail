@@ -4,8 +4,6 @@ roles:
   - name: robertdebock.buildtools
   - name: robertdebock.epel
   - name: robertdebock.httpd
-# If you have your database hosted on another instance, you don't need this
-# role.
   - name: robertdebock.mysql
   - name: robertdebock.openssl
   - name: robertdebock.php
