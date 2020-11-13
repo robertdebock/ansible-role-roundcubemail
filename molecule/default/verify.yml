@@ -5,5 +5,11 @@
   gather_facts: no
 
   tasks:
-    - name: check if connection still works
-      ping:
+    - name: access the webinterface
+      uri:
+        url: "https://localhost/roundcubemail/"
+        return_content: yes
+        validate_certs: no
+      register: roundcubemail_access_the_webinterface
+      failed_when:
+        - "'Roundcube Webmail Login' not in roundcubemail_access_the_webinterface.content"
