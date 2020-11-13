@@ -120,7 +120,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 |alpine|all|
 |amazon|all|
 |debian|all|
-|el|7, 8|
+|el|7|
 |fedora|all|
 |opensuse|all|
 |ubuntu|all|
@@ -131,6 +131,13 @@ The minimum version of Ansible required is 2.9, tests have been done to:
 - The current version.
 - The development version.
 
+## [Exceptions](#exceptions)
+
+Some variarations of the build matrix do not work. These are the variations and reasons why the build won't work:
+
+| variation                 | reason                 |
+|---------------------------|------------------------|
+| centos:8 | No package roundcubemail available. |
 
 
 ## [Testing](#testing)
