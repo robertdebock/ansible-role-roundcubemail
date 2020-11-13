@@ -1,4 +1,0 @@
----
-exceptions:
-  - variation: centos:8
-    reason: no package roundcubemail.

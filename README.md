@@ -38,6 +38,7 @@ The machine needs to be prepared in CI this is done using `molecule/resources/pr
       openssl_items:
         - name: apache-httpd
           common_name: "{{ ansible_fqdn }}"
+    - role: robertdebock.selinux
     - role: robertdebock.httpd
     - role: robertdebock.php
       php_upload_max_filesize: 5M
@@ -52,7 +53,6 @@ The machine needs to be prepared in CI this is done using `molecule/resources/pr
         - name: roundcube
           password: roundcube
           priv: "roundcube.*:ALL"
-    - role: robertdebock.selinux
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -117,9 +117,13 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 
 |container|tags|
 |---------|----|
-|el|7|
+|alpine|all|
+|amazon|all|
+|debian|all|
+|el|7, 8|
 |fedora|all|
 |opensuse|all|
+|ubuntu|all|
 
 The minimum version of Ansible required is 2.9, tests have been done to:
 
@@ -127,13 +131,6 @@ The minimum version of Ansible required is 2.9, tests have been done to:
 - The current version.
 - The development version.
 
-## [Exceptions](#exceptions)
-
-Some variarations of the build matrix do not work. These are the variations and reasons why the build won't work:
-
-| variation                 | reason                 |
-|---------------------------|------------------------|
-| centos:8 | no package roundcubemail. |
 
 
 ## [Testing](#testing)

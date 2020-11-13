@@ -13,6 +13,7 @@
       openssl_items:
         - name: apache-httpd
           common_name: "{{ ansible_fqdn }}"
+    - role: robertdebock.selinux
     - role: robertdebock.httpd
     - role: robertdebock.php
       php_upload_max_filesize: 5M
@@ -27,4 +28,3 @@
         - name: roundcube
           password: roundcube
           priv: "roundcube.*:ALL"
-    - role: robertdebock.selinux
