@@ -85,7 +85,7 @@ roundcubemail_mode: "{{ _roundcubemail_mode[ansible_os_family] | default(_roundc
 _roundcubemail_install_directory:
   default: /usr/share/roundcubemail
   Debian: /usr/share/roundcube
-  Suse: /usr/share/doc/packages/roundcubemail
+  Suse: /srv/www/roundcubemail
 
 roundcubemail_install_directory: "{{ _roundcubemail_install_directory[ansible_os_family] | default(_roundcubemail_install_directory['default']) }}"
 
