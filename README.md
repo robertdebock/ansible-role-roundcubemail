@@ -117,8 +117,6 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 
 |container|tags|
 |---------|----|
-|alpine|all|
-|amazon|Candidate|
 |debian|all|
 |el|7|
 |fedora|all|
@@ -139,6 +137,8 @@ Some variarations of the build matrix do not work. These are the variations and 
 |---------------------------|------------------------|
 | centos:8 | No package roundcubemail available. |
 | amazonlinux:1 | No package matching 'python3-pip' found available, installed or updated |
+| amazonlinux:latest | The error was: ImportError: No module named pkg_resources (openssl role) |
+| alpine | failed to install mariadb py-mysqldb (mysql role) |
 
 
 ## [Testing](#testing)
