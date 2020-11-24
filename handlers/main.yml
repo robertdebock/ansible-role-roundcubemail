@@ -1,5 +1,6 @@
 ---
 # handlers file for roundcubemail
+
 - name: import mysql table layout
   mysql_db:
     state: import
