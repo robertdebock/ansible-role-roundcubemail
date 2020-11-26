@@ -1,4 +1,5 @@
 ---
+
 - name: test if roundcubemail_database_host is set correctly
   assert:
     that:
