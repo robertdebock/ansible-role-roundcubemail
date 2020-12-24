@@ -31,11 +31,9 @@ molecule:
       - image: "opensuse"
         tag: "latest"
       - image: "ubuntu"
-        tag: "latest"
-      - image: "ubuntu"
         tag: "bionic"
       - image: "ubuntu"
-        tag: "xenial"
+        tag: "latest"
 
 galaxy:
   script:
