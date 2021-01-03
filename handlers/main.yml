@@ -9,6 +9,7 @@
     login_host: "{{ roundcubemail_database_host }}"
     login_user: "{{ roundcubemail_database_user }}"
     login_password: "{{ roundcubemail_database_password }}"
+  no_log: yes
 
 - name: create roundcubemail selinux mod
   command: checkmodule -M -m -o /etc/my-roundcubemail.mod /etc/my-roundcubemail.te
