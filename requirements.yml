@@ -10,3 +10,5 @@ roles:
   - name: robertdebock.python_pip
   - name: robertdebock.reboot
   - name: robertdebock.selinux
+collections:
+  - name: community.mysql

@@ -2,7 +2,7 @@
 # handlers file for roundcubemail
 
 - name: import mysql table layout
-  mysql_db:
+  community.mysql.mysql_db:
     state: import
     name: "{{ roundcubemail_database_name }}"
     target: "{{ roundcubemail_database_target }}"
