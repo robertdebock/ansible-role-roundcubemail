@@ -7,27 +7,27 @@
   delegate_to: localhost
 
 - name: install requirements
-  package:
+  ansible.builtin.package:
     name: "{{ roundcubemail_requirements }}"
     state: present
   notify:
     - restart httpd
 
 - name: install roundcubemail
-  package:
+  ansible.builtin.package:
     name: "{{ roundcubemail_packages }}"
     state: present
   notify:
     - import mysql table layout
 
 - name: create roundcubemail_conf_dir
-  file:
+  ansible.builtin.file:
     path: "{{ roundcubemail_conf_dir }}"
     state: directory
     mode: "0755"
 
 - name: configure roundcubemail
-  template:
+  ansible.builtin.template:
     src: "{{ roundcubemail_file }}.j2"
     dest: "{{ roundcubemail_conf_dir }}/{{ roundcubemail_file }}"
     owner: "{{ roundcubemail_owner }}"
@@ -59,7 +59,7 @@
     - ansible_selinux.status == "enabled"
 
 - name: configure httpd
-  template:
+  ansible.builtin.template:
     src: roundcube.conf.j2
     dest: "{{ roundcubemail_httpd_configuration }}"
     mode: "0644"

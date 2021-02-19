@@ -12,3 +12,4 @@ roles:
   - name: robertdebock.selinux
 collections:
   - name: community.mysql
+  - name: ansible.builtin
