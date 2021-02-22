@@ -37,7 +37,7 @@
 - name: configure selinux settings
   block:
     - name: place selinux type enforcement
-      copy:
+      ansible.builtin.copy:
         src: my-roundcubemail.te
         dest: /etc/my-roundcubemail.te
         mode: "0644"
@@ -47,7 +47,7 @@
         - load roundcubemail selinux pp
 
     - name: enable selinux boolean httpd_setrlimit
-      seboolean:
+      ansible.posix.seboolean:
         name: "{{ item }}"
         state: yes
         persistent: yes
