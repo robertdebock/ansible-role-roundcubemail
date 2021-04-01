@@ -6,7 +6,7 @@
 
   tasks:
     - name: access the webinterface
-      uri:
+      ansible.builtin.uri:
         url: "https://localhost/roundcubemail/"
         return_content: yes
         validate_certs: no
