@@ -84,6 +84,14 @@ roundcubemail_des_key: 964af56991531a805bd55085
 
 # The spellchecker to use. Either: 'google', 'pspell', 'enchant' or 'atd'.
 roundcubemail_spellcheck_engine: pspell
+
+# The mail host chosen to perform the log-in.
+roundcubemail_default_host: localhost
+roundcubemail_default_port: 143
+
+# SMTP server host (for sending mails).
+roundcubemail_smtp_server: localhost
+roundcubemail_smtp_port: 25
 ```
 
 ## [Requirements](#requirements)
