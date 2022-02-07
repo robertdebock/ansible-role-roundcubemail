@@ -9,8 +9,8 @@
 
   roles:
     - role: robertdebock.httpd
-      httpd_vhosts:
-        - name: docroot
-          servername: roundcubemail.example.com
-          documentroot: "{{ roundcubemail_install_directory }}"
+      # httpd_vhosts:
+      #   - name: docroot
+      #     servername: roundcubemail.example.com
+      #     documentroot: "{{ roundcubemail_install_directory }}"
     - role: ansible-role-roundcubemail

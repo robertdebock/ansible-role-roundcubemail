@@ -21,10 +21,10 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
 
   roles:
     - role: robertdebock.httpd
-      httpd_vhosts:
-        - name: docroot
-          servername: roundcubemail.example.com
-          documentroot: "{{ roundcubemail_install_directory }}"
+      # httpd_vhosts:
+      #   - name: docroot
+      #     servername: roundcubemail.example.com
+      #     documentroot: "{{ roundcubemail_install_directory }}"
     - role: robertdebock.roundcubemail
 ```
 
@@ -92,6 +92,8 @@ roundcubemail_default_port: 143
 # SMTP server host (for sending mails).
 roundcubemail_smtp_server: localhost
 roundcubemail_smtp_port: 25
+roundcubemail_smtp_user: ""
+roundcubemail_smtp_pass: ""
 ```
 
 ## [Requirements](#requirements)
