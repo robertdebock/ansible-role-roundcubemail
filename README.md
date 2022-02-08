@@ -21,10 +21,10 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
 
   roles:
     - role: robertdebock.httpd
-      # httpd_vhosts:
-      #   - name: docroot
-      #     servername: roundcubemail.example.com
-      #     documentroot: "{{ roundcubemail_install_directory }}"
+      httpd_vhosts:
+        - name: docroot
+          servername: localhost
+          documentroot: "{{ roundcubemail_install_directory }}"
     - role: robertdebock.roundcubemail
 ```
 
