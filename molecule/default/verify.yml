@@ -5,7 +5,7 @@
   gather_facts: no
 
   tasks:
-    - name: access the webinterface
+    - name: Access the webinterface
       ansible.builtin.uri:
         url: "http://localhost/roundcubemail/"
         return_content: yes
