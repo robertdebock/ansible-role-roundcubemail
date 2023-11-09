@@ -2,9 +2,9 @@
 
 Install and configure roundcubemail on your system.
 
-|GitHub|GitLab|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![github](https://github.com/robertdebock/ansible-role-roundcubemail/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-roundcubemail/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-roundcubemail/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-roundcubemail)|[![quality](https://img.shields.io/ansible/quality/24815)](https://galaxy.ansible.com/robertdebock/roundcubemail)|[![downloads](https://img.shields.io/ansible/role/d/24815)](https://galaxy.ansible.com/robertdebock/roundcubemail)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-roundcubemail.svg)](https://github.com/robertdebock/ansible-role-roundcubemail/releases/)|
+|GitHub|GitLab|Downloads|Version|
+|------|------|---------|-------|
+|[![github](https://github.com/robertdebock/ansible-role-roundcubemail/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-roundcubemail/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-roundcubemail/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-roundcubemail)|[![downloads](https://img.shields.io/ansible/role/d/24580)](https://galaxy.ansible.com/robertdebock/roundcubemail)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-roundcubemail.svg)](https://github.com/robertdebock/ansible-role-roundcubemail/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -144,7 +144,7 @@ The minimum version of Ansible required is 2.12, tests have been done to:
 - The current version.
 - The development version.
 
-If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-roundcubemail/issues)
+If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-roundcubemail/issues).
 
 ## [License](#license)
 
