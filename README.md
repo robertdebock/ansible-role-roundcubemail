@@ -1,4 +1,4 @@
-# Ansible role [roundcubemail](#roundcubemail)
+# [Ansible role roundcubemail](#roundcubemail)
 
 Install and configure roundcubemail on your system.
 
