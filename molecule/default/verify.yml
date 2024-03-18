@@ -1,14 +1,14 @@
 ---
 - name: Verify
   hosts: all
-  become: yes
-  gather_facts: no
+  become: true
+  gather_facts: false
 
   tasks:
     - name: Access the webinterface
       ansible.builtin.uri:
         url: "http://localhost/roundcubemail/"
-        return_content: yes
+        return_content: true
       register: roundcubemail_access_the_webinterface
       failed_when:
         - "'Roundcube Webmail' not in roundcubemail_access_the_webinterface.content"
