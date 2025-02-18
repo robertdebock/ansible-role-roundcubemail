@@ -25,4 +25,5 @@ roundcubemail_smtp_port: 25
 roundcubemail_smtp_user: ""
 roundcubemail_smtp_pass: ""
 
+roundcubemail_extra_packages: []
 roundcubemail_plugins: []
