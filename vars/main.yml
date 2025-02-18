@@ -51,6 +51,8 @@ _roundcubemail_packages:
 
 roundcubemail_packages: "{{ _roundcubemail_packages[ansible_os_family] | default(_roundcubemail_packages['default']) }}"
 
+roundcubemail_plugins_array: "{% if roundcubemail_plugins | length > 0 %}'{{ roundcubemail_plugins | join(\"', '\")}}'{% endif %}"
+
 _roundcubemail_conf_dir:
   default: /etc/roundcubemail
   Debian: /etc/roundcube

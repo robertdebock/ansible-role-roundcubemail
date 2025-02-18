@@ -24,3 +24,5 @@ roundcubemail_smtp_server: localhost
 roundcubemail_smtp_port: 25
 roundcubemail_smtp_user: ""
 roundcubemail_smtp_pass: ""
+
+roundcubemail_plugins: []
