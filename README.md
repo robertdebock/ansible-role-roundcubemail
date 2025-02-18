@@ -97,6 +97,18 @@ roundcubemail_smtp_server: localhost
 roundcubemail_smtp_port: 25
 roundcubemail_smtp_user: ""
 roundcubemail_smtp_pass: ""
+
+roundcubemail_extra_packages: []
+roundcubemail_plugins: []
+```
+
+You can add plugin by setting roundcubemail_plugins array:
+```yaml
+roundcubemail_extra_packages:
+  - roundcube-plugins
+roundcubemail_plugins:
+  - managesieve
+  - password
 ```
 
 ## [Requirements](#requirements)
