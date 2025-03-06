@@ -13,4 +13,4 @@
         - name: docroot
           servername: localhost
           documentroot: "{{ roundcubemail_install_directory }}"
-    - role: ansible-role-roundcubemail
+    - role: robertdebock.roundcubemail

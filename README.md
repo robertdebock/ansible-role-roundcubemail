@@ -26,7 +26,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
         - name: docroot
           servername: localhost
           documentroot: "{{ roundcubemail_install_directory }}"
-    - role: ansible-role-roundcubemail
+    - role: robertdebock.roundcubemail
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/robertdebock/ansible-role-roundcubemail/blob/master/molecule/default/prepare.yml):
