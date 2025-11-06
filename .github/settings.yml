@@ -5,4 +5,4 @@
 repository:
   description: Install and configure roundcubemail on your system.
   homepage: https://robertdebock.nl/
-  topics: roundcubemail, ansible, molecule, tox, playbook
+  topics: roundcubemail, ansible, molecule, playbook
