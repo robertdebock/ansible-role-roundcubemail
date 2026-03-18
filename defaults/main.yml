@@ -7,7 +7,7 @@ roundcubemail_database_password: roundcube
 roundcubemail_database_name: roundcube
 
 # A URL to get support.
-roundcubemail_support_url: "{{ ansible_fqdn }}/support"
+roundcubemail_support_url: "{{ ansible_facts['fqdn'] }}/support"
 
 # A key to encrypt sensitive data.
 roundcubemail_des_key: 964af56991531a805bd55085

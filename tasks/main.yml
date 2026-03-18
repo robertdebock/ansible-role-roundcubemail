@@ -35,8 +35,8 @@
 
 - name: Configure selinux settings
   when:
-    - ansible_selinux is defined
-    - ansible_selinux.status == "enabled"
+    - ansible_facts['selinux'] is defined
+    - ansible_facts['selinux'].status == "enabled"
   block:
     - name: Place selinux type enforcement
       ansible.builtin.copy:
