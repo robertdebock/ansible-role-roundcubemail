@@ -46,7 +46,7 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
     - role: robertdebock.openssl
       openssl_items:
         - name: apache-httpd
-          common_name: "{{ ansible_fqdn }}"
+          common_name: "{{ ansible_facts['fqdn'] }}"
     - role: robertdebock.selinux
     - role: robertdebock.httpd
     - role: robertdebock.php
@@ -80,7 +80,7 @@ roundcubemail_database_password: roundcube
 roundcubemail_database_name: roundcube
 
 # A URL to get support.
-roundcubemail_support_url: "{{ ansible_fqdn }}/support"
+roundcubemail_support_url: "{{ ansible_facts['fqdn'] }}/support"
 
 # A key to encrypt sensitive data.
 roundcubemail_des_key: 964af56991531a805bd55085
