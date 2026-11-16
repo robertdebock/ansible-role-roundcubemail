@@ -19,8 +19,6 @@
       php_upload_max_filesize: 5M
       php_post_max_size: 6M
       php_date_timezone: Europe/Amsterdam
-      php_extension:
-        - mcrypt.so
     - role: robertdebock.mysql
       mysql_databases:
         - name: roundcube

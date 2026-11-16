@@ -2,7 +2,7 @@
 # handlers file for roundcubemail
 
 - name: Import mysql table layout
-  community.mysql.mysql_db:
+  ansible.mysql.mysql_db:
     state: import
     name: "{{ roundcubemail_database_name }}"
     target: "{{ roundcubemail_database_target }}"
