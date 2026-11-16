@@ -11,7 +11,7 @@ roles:
   - name: robertdebock.reboot
   - name: robertdebock.selinux
 collections:
-  - name: community.mysql
+  - name: ansible.mysql
   - name: ansible.posix
   - name: community.crypto
   - name: community.general
