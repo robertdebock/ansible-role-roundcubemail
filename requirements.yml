@@ -8,7 +8,6 @@ roles:
   - name: robertdebock.openssl
   - name: robertdebock.php
   - name: robertdebock.python_pip
-  - name: robertdebock.reboot
   - name: robertdebock.selinux
 collections:
   - name: ansible.mysql
