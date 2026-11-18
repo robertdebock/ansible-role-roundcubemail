@@ -89,6 +89,13 @@ _roundcubemail_install_directory:
 
 roundcubemail_install_directory: "{{ _roundcubemail_install_directory[ansible_facts['os_family']] | default(_roundcubemail_install_directory['default']) }}"
 
+# Roundcube 1.7 (Fedora) serves its web interface from the `public_html` directory.
+_roundcubemail_web_directory:
+  default: "{{ roundcubemail_install_directory }}"
+  Fedora: "{{ roundcubemail_install_directory }}/public_html"
+
+roundcubemail_web_directory: "{{ _roundcubemail_web_directory[ansible_facts['distribution']] | default(_roundcubemail_web_directory['default']) }}"
+
 roundcubemail_database_url: "mysql://{{ roundcubemail_database_user }}:{{ roundcubemail_database_password }}@{{ roundcubemail_database_host }}/{{ roundcubemail_database_name }}"
 
 roundcubemail_database_target: "{{ roundcubemail_install_directory }}/SQL/mysql.initial.sql"

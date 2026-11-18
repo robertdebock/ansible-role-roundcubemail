@@ -3,12 +3,12 @@
 # Round Cube Webmail is a browser-based multilingual IMAP client
 #
 
-Alias /roundcubemail {{ roundcubemail_install_directory }}
+Alias /roundcubemail {{ roundcubemail_web_directory }}
 
 # Define who can access the Webmail
 # You can enlarge permissions once configured
 
-<Directory {{ roundcubemail_install_directory }}/>
+<Directory {{ roundcubemail_web_directory }}/>
     <IfModule mod_authz_core.c>
         # Apache 2.4
         Require local
